@@ -20,7 +20,10 @@ connection.once('open', () => {
 })
 
 const contactRouter = require('./routes/contact');
+const projectRouter = require('./routes/project');
+
 app.use('/contact', contactRouter) 
+app.use('/projects', projectRouter)
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
