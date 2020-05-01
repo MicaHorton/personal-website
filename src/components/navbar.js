@@ -6,7 +6,7 @@ export default class Navbar extends Component {
     return (
       <nav className="nav">
         <Link to="/" className="nav-item is-active" active-color="red">About</Link>
-        <Link to="/contact" className="nav-item" active-color="green">Contact</Link>
+        <Link to="/projects" className="nav-item" active-color="green">Projects</Link>
         <span className="nav-indicator"></span>
       </nav>
       
@@ -15,6 +15,15 @@ export default class Navbar extends Component {
 }
 
 /*
+options:
+round navbar
+round boxes
+
+OR
+
+flat navbar w. name (more name visibility...)
+round boxes, gray background, with little colors
+
 lol, attempt at doing cool animation thing, but fail
   
 handleClick = () => {
