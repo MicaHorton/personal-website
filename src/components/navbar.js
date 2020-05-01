@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import styles from '../styles/navbar.module.css';
 
 export default class Navbar extends Component {
   render() {
     return (
-      <nav className="nav">
-        <Link to="/" className="nav-item is-active" active-color="red">About</Link>
-        <Link to="/projects" className="nav-item" active-color="green">Projects</Link>
-        <span className="nav-indicator"></span>
+      <nav className={styles.nav}>
+        <Link to="/" className={styles.navItem}>About</Link>
+        <Link to="/projects" className={styles.navItem}>Projects</Link>
+        <span className={styles.navIndicator}></span>
       </nav>
       
     );

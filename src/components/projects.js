@@ -1,42 +1,42 @@
 import React, { Component } from 'react';
+import styles from '../styles/projects.module.css';
+
+/* Initialize Project Box */
+const Project = props => (
+    <div className={styles.box}>
+        <h1>{props.project.title}</h1>
+        <p>{props.project.post}</p>
+    </div>
+) 
 
 export default class About extends Component {
     constructor (props) {
         super(props);
 
         /* Initialize Empty Array of Projects */
-        this.state = {projects:[]}
-
-        /* Initialize Project Box */
-        const Project = props => (
-            <div className = 'box'>
-                <h1>{props.projects.title}</h1>
-                <p>{props.projects.post}</p>
-            </div>
-        )
+        this.state = {projects:[]};
     }
 
     componentDidMount() {
         /* Fill Project Array with Data */
-        this.setState({
-            title: 'test title',
-            post: 'test pst'
+        this.setState({ projects: 
+            [
+                {title:'test title', post:'test post'},
+                {title:'test title', post:'test post'}
+            ]
         })
     }
 
     listProjects() {
         /* Map Array of Projects to Box */
         return this.state.projects.map(currentProject => {
-            return <Project />;
+            return <Project project={currentProject}/>;
         })
     }
 
     render() {
         return (
-            <>
-            <h1>Hiiii</h1>
             <body>{ this.listProjects() }</body>
-            </>
         )
                   
     }
