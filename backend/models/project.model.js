@@ -16,6 +16,11 @@ const projectSchema = new Schema({
         unique: true,
         trim: true,
         minlength: 5
+    },
+    tags: {
+        type: Array,
+        required: false,
+        unique: false,
     }
 }, {
     timestamps: true,

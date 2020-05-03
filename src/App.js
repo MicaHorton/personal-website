@@ -5,6 +5,7 @@ import Navbar from "./components/navbar.js";
 import About from "./components/about.js";
 import Projects from "./components/projects.js";
 
+
 function App() {
   return (
     <Router>
@@ -18,3 +19,8 @@ function App() {
 }
 
 export default App;
+
+/*
+import Tagbar from "./components/tagbar.js";
+<Route path='/Projects' component={Tagbar} />
+*/

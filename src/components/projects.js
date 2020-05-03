@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styles from '../styles/projects.module.css';
+import axios from 'axios';
+import Tagbar from "./tagbar.js";
 
 /* Initialize Project Box */
 const Project = props => (
@@ -19,32 +21,43 @@ export default class About extends Component {
 
     componentDidMount() {
         /* Fill Project Array with Data */
+        axios.get('http://localhost:5000/projects')
+            .then(response => {
+                this.setState({ projects: response.data });
+            })
+            .catch((error) => {
+                console.log(error);
+             })
+
+
+        /*
         this.setState({ projects: 
             [
                 {title:'test title', post:'test post'},
                 {title:'test title', post:'test post'}
             ]
-        })
+        })*/
     }
 
     listProjects() {
         /* Map Array of Projects to Box */
-        return this.state.projects.map(currentProject => {
-            return <Project project={currentProject}/>;
+        return this.state.projects.map(current => {
+            return <Project project={current}/>;
         })
+
+
+
+        
     }
 
     render() {
         return (
-            <body>{ this.listProjects() }</body>
+            <>
+            <Tagbar data={this.state.projects} />
+            <div>{ this.listProjects() }</div>
+            </>
         )
                   
     }
   }
 
-/*
-The Goal:
-two half modules, that adjust to single modules on mobile
-that adjust based to tags
-ughh.. I want to work on it but I shoud sleep. the sad thing is I can't sleep anyway, but I will will will will will
-*/
