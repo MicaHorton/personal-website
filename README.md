@@ -6,6 +6,9 @@ https://www.youtube.com/watch?v=7CqJlxBYj-M
 React Beginner Mistakes Tutorial
 https://www.youtube.com/watch?v=oZbTqEmQpDo
 
+React Responsive Github Repository
+https://github.com/contra/react-responsive
+
 Options
 1) Get all JSON data and then sort through it
 - Probably faster actually

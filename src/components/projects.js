@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
+import MediaQuery from 'react-responsive'
 import styles from '../styles/projects.module.css';
 import axios from 'axios';
 
+
+const handleReadClick = (id) => {
+    console.log('Read more button clicked!', id)
+
+    
+}
 
 const Project = props => (
     <div className={styles.box}>
         <h1>{props.project.title}</h1>
         <p>{props.project.post}</p>
+        <button className={styles.readMore} onClick={() => handleReadClick(props.project._id)}>read more</button>
     </div>
 ) 
 
@@ -44,7 +52,7 @@ export default class About extends Component {
         })  
     }
 
-    handleClick = (e) => {
+    handleTagClick = (e) => {
         this.setState({wantWhat: e.target.innerHTML.toLowerCase()});
     } 
 
@@ -53,21 +61,30 @@ export default class About extends Component {
         let content;
 
         if (wantWhat === 'all') {
-            content = <div> {this.listAll()} </div>
+            content = this.listAll()
         } else {
-            console.log("tag", this.listByTag()) 
-            content = <div> {this.listByTag()}</div>
+            content = this.listByTag()
         }
 
 
         return (
             <>
-            <div className={styles.tagbar}>
-                <button onClick={this.handleClick} className={styles.tag}>All</button>
-                <button onClick={this.handleClick} className={styles.tag}>Python</button>
-            </div>
+            <MediaQuery minDeviceWidth ={1224} >
+        
+                <div className={styles.webTagbar}>
+                    <button onClick={this.handleTagClick} className={styles.webTag}>All</button>
+                    <button onClick={this.handleTagClick} className={styles.webTag}>Python</button>
+                </div>
 
-            {content}
+                <div className={styles.webContent}>{content}</div>
+            </MediaQuery>
+
+            <MediaQuery maxDeviceWidth = {1224}>
+               <p>You are on mobile!</p>
+
+            </MediaQuery>
+            
+            
             </>
         )
                   
@@ -75,28 +92,16 @@ export default class About extends Component {
   }
 
 
-/*
-If nothing has been clicked:
-  list all
-if a tag has been clicked:
-  list according to the tag
 
-state.projects manages the changing data
-a new state for managing tags
-  wantAll, wantWhat?
+  /* Making Website Mobile Friendly
 
-SOLUTION
-if wantWhat == all:
-  list all
-if wantWhat == tag:
-  list by tag (has to be wrapped in div)
+  Smoothen web transitioning
+  Change to use Device Width
+  
+  Option 1: Use just CSS @media tags
+  Option 2: Use <MediaQuery
 
-if whantall = true:
-  list all
-if wantall = false:
-  do nothing and let tag function do it's thing
-
-
-use state to change rendered
-
-*/
+  
+             
+  
+  */
