@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route} from "react-router-dom";
 import Navbar from "./components/navbar.js";
 import About from "./components/about.js";
 import Projects from "./components/projects.js";
+import Single from './components/single.js'
 
 
 function App() {
@@ -13,6 +14,8 @@ function App() {
       <Navbar />
       <Route path='/' exact component={About} />
       <Route path='/Projects' component={Projects} />
+      <Route path='/:id' component={Single} />
+
 
     </Router>
   );

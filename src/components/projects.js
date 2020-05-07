@@ -1,27 +1,25 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import MediaQuery from 'react-responsive'
 import styles from '../styles/projects.module.css';
 import axios from 'axios';
-
-
-const handleReadClick = (id) => {
-    console.log('Read more button clicked!', id)
-
-    
-}
 
 const Project = props => (
     <div className={styles.box}>
         <h1>{props.project.title}</h1>
         <p>{props.project.post}</p>
-        <button className={styles.readMore} onClick={() => handleReadClick(props.project._id)}>read more</button>
+        <Link to={{
+            pathname:'/:id/'+props.project._id,
+            state: props.project
+        }}>read more</Link>
+
+       
     </div>
 ) 
 
 export default class About extends Component {
     constructor (props) {
         super(props);
-
         this.state = {projects:[], wantWhat: 'all'};
     }
 
@@ -95,6 +93,12 @@ export default class About extends Component {
 
   /* Making Website Mobile Friendly
 
+  I have 3 components really
+  project
+  tagbar
+  singlePage
+
+
   Smoothen web transitioning
   Change to use Device Width
   
@@ -102,6 +106,14 @@ export default class About extends Component {
   Option 2: Use <MediaQuery
 
   
-             
+  add function as a property
+
+  Linking Components
+  - there are functional, class, and higher-order components
+  - use props to inherit stuff
+
+  - use conditional logic
+  - use ROUTER from react router dom
+  - use LINKS from react router dom
   
   */
