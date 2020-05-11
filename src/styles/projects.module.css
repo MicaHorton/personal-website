@@ -22,6 +22,7 @@
 
 .box>p {
     color: #83818c;
+    height: 300px;
     padding-left: 30px;
     font-family: 'DM Sans', sans-serif;
     text-align: left;

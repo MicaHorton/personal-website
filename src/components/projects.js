@@ -3,15 +3,17 @@ import { Link } from 'react-router-dom';
 import MediaQuery from 'react-responsive'
 import styles from '../styles/projects.module.css';
 import axios from 'axios';
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
 
 const Project = props => (
     <div className={styles.box}>
         <h1>{props.project.title}</h1>
-        <p>{props.project.post}</p>
+        <p>{props.snippet}</p>
         <Link to={{
             pathname:'/:id/'+props.project._id,
             state: props.project
-        }}>read more</Link>
+        }} className={styles.readMore}>read more</Link>
 
        
     </div>
@@ -35,7 +37,10 @@ export default class About extends Component {
 
     listAll() {
         return this.state.projects.map(current => {
-            return <Project project={current} key={current._id}/>;
+            let doc = new JSDOM(current.post);
+            let snippet = doc.window.document.querySelector('h1').nextElementSibling.textContent;
+            
+            return <Project project={current} snippet={snippet} key={current._id}/>;
         })
     }
 
@@ -91,29 +96,3 @@ export default class About extends Component {
 
 
 
-  /* Making Website Mobile Friendly
-
-  I have 3 components really
-  project
-  tagbar
-  singlePage
-
-
-  Smoothen web transitioning
-  Change to use Device Width
-  
-  Option 1: Use just CSS @media tags
-  Option 2: Use <MediaQuery
-
-  
-  add function as a property
-
-  Linking Components
-  - there are functional, class, and higher-order components
-  - use props to inherit stuff
-
-  - use conditional logic
-  - use ROUTER from react router dom
-  - use LINKS from react router dom
-  
-  */
