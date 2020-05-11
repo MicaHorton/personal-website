@@ -11,11 +11,9 @@ const Project = props => (
         <h1>{props.project.title}</h1>
         <p>{props.snippet}</p>
         <Link to={{
-            pathname:'/:id/'+props.project._id,
+            pathname: '/single/' + props.project._id,
             state: props.project
         }} className={styles.readMore}>read more</Link>
-
-       
     </div>
 ) 
 
@@ -33,12 +31,15 @@ export default class About extends Component {
             .catch((error) => {
                 console.log(error);
              })
+
+        
     }
 
     listAll() {
         return this.state.projects.map(current => {
             let doc = new JSDOM(current.post);
             let snippet = doc.window.document.querySelector('h1').nextElementSibling.textContent;
+            console.log('List all was run')
             
             return <Project project={current} snippet={snippet} key={current._id}/>;
         })
@@ -60,6 +61,7 @@ export default class About extends Component {
     } 
 
     render() {
+        console.log('Render was run');
         const wantWhat = this.state.wantWhat;
         let content;
 
@@ -95,4 +97,13 @@ export default class About extends Component {
   }
 
 
+/*
+Problem is that it runs component linked to ':/id' ie. single.js before rest of code
 
+Ways to fix this? Other things than link?
+Some sort of setting I could fix?
+Make it render only if clicked on (did that)
+
+Make it link to path, then render
+single is being loaded no matter what
+*/

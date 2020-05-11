@@ -13,8 +13,8 @@ function App() {
 
       <Navbar />
       <Route path='/' exact component={About} />
-      <Route path='/Projects' component={Projects} />
-      <Route path='/:id' component={Single} />
+      <Route path='/projects' component={Projects} />
+      <Route path='/single/:id' exact component={Single} />
 
 
     </Router>
