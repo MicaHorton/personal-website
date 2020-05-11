@@ -29,3 +29,11 @@ b
 
 2) Implement get data by ID and get ther right data to starts
 3) Or Mongo Sort method
+
+Linking Components
+- there are functional, class, and higher-order components
+- use props to inherit stuff
+
+- use conditional logic
+- use ROUTER from react router dom
+- use LINKS from react router dom

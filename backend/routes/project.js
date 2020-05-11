@@ -14,7 +14,6 @@ router.route('/add').post((req, res) => {
   const post = req.body.post;
 
   const newProject = new Project({title, post});
-
   newProject.save()
     .then(() => res.json('Project added!'))
     .catch(err => res.status(400).json('Error: ' + err));
