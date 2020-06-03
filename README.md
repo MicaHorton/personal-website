@@ -1,13 +1,16 @@
 ## Resources
 
 MERN Tutorial
-https://www.youtube.com/watch?v=7CqJlxBYj-M
+https://www.youtube.com/swatch?v=7CqJlxBYj-M
 
 React Beginner Mistakes Tutorial
 https://www.youtube.com/watch?v=oZbTqEmQpDo
 
 React Responsive Github Repository
 https://github.com/contra/react-responsive
+
+How To Font Awesome
+https://stackoverflow.com/questions/23116591/how-to-include-a-font-awesome-icon-in-reacts-render
 
 Options
 1) Get all JSON data and then sort through it

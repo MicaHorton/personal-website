@@ -74,20 +74,14 @@ export default class About extends Component {
 
         return (
             <>
-            <MediaQuery minDeviceWidth ={1224} >
-        
-                <div className={styles.webTagbar}>
-                    <button onClick={this.handleTagClick} className={styles.webTag}>All</button>
-                    <button onClick={this.handleTagClick} className={styles.webTag}>Python</button>
-                </div>
 
-                <div className={styles.webContent}>{content}</div>
-            </MediaQuery>
-
-            <MediaQuery maxDeviceWidth = {1224}>
-               <p>You are on mobile!</p>
-
-            </MediaQuery>
+            <div className={styles.tagbar}>
+                <span className={styles.filter}>Filter</span>
+                <button onClick={this.handleTagClick} className={styles.tag}>All</button>
+                <button onClick={this.handleTagClick} className={styles.tag}>Python</button>
+            </div>
+    
+            <div className={styles.content}>{content}</div>
             
             
             </>

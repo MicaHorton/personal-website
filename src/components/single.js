@@ -10,26 +10,20 @@ export default class Single extends Component {
      }
 
     getPost() {
-            let doc = new JSDOM(this.props.location.state.post);
-            /* doc.window.document.body.querySelector('h1').remove(); */
-            let p = doc.window.document.body.getElementsByTagName('p');
-            
-            for (let i = 0; i < p.length; i++) {
-                if (p[i].innerHTML === '&nbsp;') {
-                    p[i].remove();
-                }
-            } 
+        let doc = new JSDOM(this.props.location.state.post);
+        /* doc.window.document.body.querySelector('h1').remove(); */
+        let p = doc.window.document.body.getElementsByTagName('p');
+        
+        for (let i = 0; i < p.length; i++) {
+            if (p[i].innerHTML === '&nbsp;') {
+                p[i].remove();
+            }
+        } 
 
-            let item = doc.window.document.body.outerHTML; 
-            return (
-                <div className={styles.box} dangerouslySetInnerHTML={{__html: item}}></div>
-            )
-
-        } else {
-            return (
-                <p>Single.js component was here</p>
-            )
-        }
+        let item = doc.window.document.body.outerHTML; 
+        return (
+            <div className={styles.box} dangerouslySetInnerHTML={{__html: item}}></div>
+        )
 
     }
     
