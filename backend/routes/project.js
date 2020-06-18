@@ -3,6 +3,7 @@ let Project = require('../models/project.model');
 
 /* Route Get (Everything) Request */
 router.route('/').get((req, res) => {
+    res.setHeader("Content-Security-Policy", "script-src 'self' '");
     Project.find()
     .then(projects => res.json(projects))
     .catch(err => res.status(400).json('Error: ' + err));
@@ -50,3 +51,5 @@ Project.findById(req.params.id)
 
 module.exports = router;
 
+
+/* I don't think it's authenticated to get to mongo*

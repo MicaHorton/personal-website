@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import MediaQuery from 'react-responsive'
 import styles from '../styles/projects.module.css';
 import axios from 'axios';
 const jsdom = require("jsdom");
@@ -24,9 +23,10 @@ export default class About extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/projects')
+        axios.get('https://api-dot-personal-website-279319.wl.r.appspot.com:5000/projects')
             .then(response => {
                 this.setState({ projects: response.data });
+                console.log('Got a response!');
             })
             .catch((error) => {
                 console.log(error);
@@ -92,12 +92,6 @@ export default class About extends Component {
 
 
 /*
-Problem is that it runs component linked to ':/id' ie. single.js before rest of code
-
-Ways to fix this? Other things than link?
-Some sort of setting I could fix?
-Make it render only if clicked on (did that)
-
-Make it link to path, then render
-single is being loaded no matter what
+Possible things wrong:
+- Application doesn't have permission to access service api
 */

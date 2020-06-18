@@ -1,8 +1,12 @@
 runtime: nodejs10
 handlers:
-  - url: /
+#  - url: /
+#  static_files: build/index.html
+#  upload: build/index.html
+
+- url: /
   static_files: build/index.html
   upload: build/index.html
 
-  - url: /
-  static-dir: build
+- url: /
+  static_dir: build
