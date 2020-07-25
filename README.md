@@ -1,5 +1,5 @@
 # Personal-Website
-My personal website (work in progress) built with the MERN stack. 
+My personal website (work in progress) built with the MERN stack. See at https://personal-website-279319.wl.r.appspot.com/
 
 ## Resources
 
