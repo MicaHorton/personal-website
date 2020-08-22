@@ -16,7 +16,7 @@ const Project = props => (
     </div>
 ) 
 
-export default class About extends Component {
+export default class Blog extends Component {
     constructor (props) {
         super(props);
         this.state = {projects:[], wantWhat: 'all'};
