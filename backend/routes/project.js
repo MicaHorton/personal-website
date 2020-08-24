@@ -9,7 +9,8 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-/* Route Add Request */
+/*
+/* Route Add Request */ /*
 router.route('/add').post((req, res) => {
   const title = req.body.title;
   const post = req.body.post;
@@ -18,23 +19,23 @@ router.route('/add').post((req, res) => {
   newProject.save()
     .then(() => res.json('Project added!'))
     .catch(err => res.status(400).json('Error: ' + err));
-});
+}); */
 
-/* Route Get by ID Request */
+/* Route Get by ID Request */ /*
 router.route('/:id').get((req, res) => {
     Project.findById(req.params.id)
       .then(projects => res.json(projects))
       .catch(err => res.status(400).json('Error: ' + err));
-  });
+  }); */
 
-/* Route Delete by ID Request */
+/* Route Delete by ID Request */ /*
 router.route('/:id').delete((req, res) => {
 Project.findByIdAndDelete(req.params.id)
     .then(() => res.json('Project deleted.'))
     .catch(err => res.status(400).json('Error: ' + err));
-});
+}); */
 
-/* Route Update by ID Request */
+/* Route Update by ID Request */ /*
 router.route('/update/:id').post((req, res) => {
 Project.findById(req.params.id)
     .then(project => {
@@ -46,10 +47,7 @@ Project.findById(req.params.id)
         .catch(err => res.status(400).json('Error: ' + err));
     })
     .catch(err => res.status(400).json('Error: ' + err));
-});
-  
+}); */
+
 
 module.exports = router;
-
-
-/* I don't think it's authenticated to get to mongo*/

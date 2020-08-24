@@ -39,6 +39,12 @@ app.post('/email', (req, res) => {
   })
 })
 
+// Connect Auth Routers
+const authRouter = require('./routes/auth');
+app.use(authRouter);
+
+
+
 // Listen for Connection on Port 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);

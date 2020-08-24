@@ -14,11 +14,15 @@
         border-radius: 40px;
         background-color: #fff;
         box-shadow: 0 10px 40px rgba(159, 162, 177, .8);
+
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
     .box>h1 {
-        padding-top: 20px;
-        padding-left: 30px;
+        padding-top: 5px;
+
+        font-size: 25px; 
         font-family: 'DM Sans', sans-serif;
         text-align: left;
     }
@@ -26,7 +30,7 @@
     .box>p {
         color: #83818c;
         height: 300px;
-        padding-left: 30px;
+        
         font-family: 'DM Sans', sans-serif;
         text-align: left;
         font-size: 20px;
@@ -34,8 +38,9 @@
     }
 
     .readMore {
+        font-family: inherit;
         position: absolute;
-        bottom: 30px;
+        bottom: 20px;
         right: 50px;
     }
 

@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import styles from '../styles/contact.module.css';
 import axios from 'axios';
 
-export default class Contact extends Component {
+export default class Admin extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      name: '',
       email: '',
-      message: ''
+      password: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -43,25 +42,19 @@ export default class Contact extends Component {
     
   }
 
-
   render() {
     return (
         <div className={styles.box}>
           <h1>Contact Me</h1>
           <form onSubmit={this.handleSubmit}>
             <label className={styles.formItem}>
-              Name
-              <input name='name' type='text' value={this.state.name} onChange={this.handleChange} required />        
-            </label>
-
-            <label className={styles.formItem}>
               Email
               <input name='email' type='email' value={this.state.email} onChange={this.handleChange} required />        
             </label>
 
             <label className={styles.formItem}>
-              Message
-              <textarea name='message' rows='10' value={this.state.message} onChange={this.handleChange} required/>        
+              Password
+              <input name='password' type='password' value={this.state.password} onChange={this.handleChange} required />        
             </label>
 
             <input className={styles.formItem} type='submit' value='Submit' />
@@ -71,27 +64,3 @@ export default class Contact extends Component {
     );
   }
 }
-
-/*
-<h1>Contact Me</h1>
-          <form onSubmit={this.handleSubmit}>
-            <label className={styles.formItem}>
-              Name
-              <input type='text' value={this.state.value} onChange={this.handleChange} />        
-            </label>
-
-            <label className={styles.formItem}>
-              Email
-              <input type='email' value={this.state.value} onChange={this.handleChange} />        
-            </label>
-
-            <label className={styles.formItem}>
-              Message
-              <textarea rows='30' value={this.state.value} onChange={this.handleChange} />        
-            </label>
-
-            <input className={styles.formItem} type='submit' value='Submit' />
-
-          </form>
-
-*/

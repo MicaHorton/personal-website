@@ -8,7 +8,7 @@ const { JSDOM } = jsdom;
 const Project = props => (
     <div className={styles.box}>
         <h1>{props.project.title}</h1>
-        <p>{props.snippet}</p>
+        <p>{props.project.description}</p>
         <Link to={{
             pathname: '/single/' + props.project._id,
             state: props.project
@@ -23,7 +23,9 @@ export default class Blog extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://api-dot-personal-website-279319.wl.r.appspot.com:5000/projects')
+        /* Development: http://localhost:5000/projects */
+        /* Production: https://api-dot-personal-website-279319.wl.r.appspot.com/projects */
+        axios.get('https://api-dot-personal-website-279319.wl.r.appspot.com/projects') 
             .then(response => {
                 this.setState({ projects: response.data });
                 console.log('Got a response!');
@@ -31,17 +33,12 @@ export default class Blog extends Component {
             .catch((error) => {
                 console.log(error);
              })
-
-        
     }
 
     listAll() {
         return this.state.projects.map(current => {
-            let doc = new JSDOM(current.post);
-            let snippet = doc.window.document.querySelector('h1').nextElementSibling.textContent;
             console.log('List all was run')
-            
-            return <Project project={current} snippet={snippet} key={current._id}/>;
+            return <Project project={current} key={current._id}/>;
         })
     }
 
@@ -74,7 +71,6 @@ export default class Blog extends Component {
 
         return (
             <>
-
             <div className={styles.tagbar}>
                 <span className={styles.filter}>Filter</span>
                 <button onClick={this.handleTagClick} className={styles.tag}>All</button>
@@ -82,8 +78,6 @@ export default class Blog extends Component {
             </div>
     
             <div className={styles.content}>{content}</div>
-            
-            
             </>
         )
                   
@@ -94,4 +88,5 @@ export default class Blog extends Component {
 /*
 Possible things wrong:
 - Application doesn't have permission to access service api
+- For deployement: axios.get('https://api-dot-personal-website-279319.wl.r.appspot.com:5000/projects')
 */

@@ -5,7 +5,8 @@ import Navbar from "./components/navbar.js";
 import About from "./components/about.js";
 import Projects from "./components/projects.js";
 import Single from './components/single.js'
-
+import Contact from './components/contact.js';
+import Admin from './components/admin.js';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path='/' exact component={About} />
       <Route path='/projects' component={Projects} />
       <Route path='/single/:id' exact component={Single} />
+      <Route path='/admin' exact component={Admin} />
 
 
     </Router>
