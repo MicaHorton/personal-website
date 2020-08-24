@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const sendMail = require('./routes/email');
+const sendMail = require('./email');
 require('dotenv').config();
 
 // Initialize Dependnecies and Set Port

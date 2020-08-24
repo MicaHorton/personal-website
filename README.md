@@ -49,6 +49,8 @@ npm run build
 gcloud app deploy
 ```
 ### Backend
+1) modify things: set https only (secure: true) for cookies
+2) deploy with gcloud
 ```
 cd backend
 gcloud app deploy

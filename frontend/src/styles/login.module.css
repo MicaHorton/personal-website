@@ -2,12 +2,13 @@
 
 /* Box Styling */
 .box {
-    width: 70vw;
-    min-height: 30vh;
+    width: 35vw;
+    min-height: 40vh;
     border-radius: 40px;
     background-color: #fff;
     box-shadow: 0 10px 40px rgba(159, 162, 177, .8);
     padding-bottom: 30px;
+    margin-top: 50px;
     
   }
 
@@ -16,6 +17,7 @@
   font-size: 30px;
   padding-top: 35px;
   font-weight: 700;
+  text-align: center;
 }
 
 .box>* {
@@ -35,10 +37,10 @@
 .formItem {
   display: flex;
   flex-flow: column;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-input, textarea {
+input {
   font-size: 17px;
   font-family: inherit;
   font-weight: 500;
@@ -46,24 +48,12 @@ input, textarea {
 
   border: 1px solid #83818c; 
   border-radius: 3px;
-  margin-top: 5px;
+  margin-top: 10px;
   
 }
 
-textarea {
-  resize: none;
+.button {
+  margin-top: 25px;
 }
 
-/*
-input, textarea {
-  font-size: inherit;
-  font-family: inherit;
-  font-weight: inherit;
-  color: #83818c;
 
-  border: 1px line #83818c; 
-  border-radius: 2px;
-  outline: 0;
-  
-}
-*/

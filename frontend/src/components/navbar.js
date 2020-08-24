@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import styles from '../styles/navbar.module.css';
+import styles from '../styles/altnavbar.module.css';
 
 export default class Navbar extends Component {
   constructor (props) {
@@ -21,7 +21,7 @@ export default class Navbar extends Component {
     return (
       <nav className={styles.nav}>
         <Link to="/" className={`${styles.navItem} ${styles.orange} ${this.state.active[0] && styles.active}`} onClick={() => this.handleClick(0)} >About</Link>
-        <a href="https://github.com/MicaHorton" target="_blank" className={`${styles.navItem} ${styles.green} ${this.state.active[1] && styles.active}`} onClick={() => this.handleClick(1)} >Github</a>
+        <a href="https://github.com/MicaHorton" target="_blank" className={`${styles.navItem} ${styles.green} ${this.state.active[1] && styles.active}`} >Github</a>
         <Link to="/projects" className={`${styles.navItem} ${styles.red} ${this.state.active[2] && styles.active}`} onClick={() => this.handleClick(2)} >Blog</Link>
         <Link to="/contact" className={`${styles.navItem} ${styles.purple} ${this.state.active[3] && styles.active}`} onClick={() => this.handleClick(3)} >Contact</Link>
         <span className={`${styles.navIndicator} 

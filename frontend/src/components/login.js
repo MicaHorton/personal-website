@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import styles from '../styles/contact.module.css';
+import styles from '../styles/login.module.css';
 import axios from 'axios';
 
-export default class Admin extends Component {
+export default class Login extends Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -45,7 +45,7 @@ export default class Admin extends Component {
   render() {
     return (
         <div className={styles.box}>
-          <h1>Contact Me</h1>
+          <h1>Login</h1>
           <form onSubmit={this.handleSubmit}>
             <label className={styles.formItem}>
               Email
@@ -57,7 +57,7 @@ export default class Admin extends Component {
               <input name='password' type='password' value={this.state.password} onChange={this.handleChange} required />        
             </label>
 
-            <input className={styles.formItem} type='submit' value='Submit' />
+            <input className={`${styles.formItem} ${styles.button}`} type='submit' value='Submit' />
 
           </form>
         </div>
