@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const sendMail = require('./email');
+const sendMail = require('./middleware/sendEmail');
 require('dotenv').config();
 
 // Initialize Dependnecies and Set Port
@@ -40,10 +40,8 @@ app.post('/email', (req, res) => {
 })
 
 // Connect Auth Routers
-const authRouter = require('./routes/auth');
-app.use(authRouter);
-
-
+const adminRouter = require('./routes/admin');
+app.use(adminRouter);
 
 // Listen for Connection on Port 
 app.listen(port, () => {

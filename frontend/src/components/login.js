@@ -26,19 +26,17 @@ export default class Login extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const data = this.state;
-    console.log(data);
+    const body = this.state;
 
-    /* Development: http://localhost:5000/email */
-    /* Production: https://api-dot-personal-website-279319.wl.r.appspot.com/email */
+    /* Development: http://localhost:5000/login */
+    /* Production: https://api-dot-personal-website-279319.wl.r.appspot.com/login */
 
-    axios.post('https://api-dot-personal-website-279319.wl.r.appspot.com/email', data)
+    axios.post('http://localhost:5000/login', body)
       .then(res => {
         console.log(res);
       }).catch((error) => {
         console.log(error);
       })
-    
     
   }
 
