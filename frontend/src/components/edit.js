@@ -1,45 +1,64 @@
 import React, { Component } from 'react';
-import styles from '../styles/single.module.css';
+import styles from '../styles/edit.module.css';
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
 
-const Post = props => (
-    <>
-    <div className={styles.box}>
-        <h1>Title</h1>
-        <p>{props.post.title}</p>
-    </div>
-    <div className={styles.box}>
-        <h1>Post</h1>
-        <p>Button will be here</p>
-    </div>
-    <div className={styles.box}>
-        <h1>Tags</h1>
-        <p>{props.post.tags}</p>
-    </div>
-      
-    </>
-  )
-  
-
 export default class Edit extends Component {
     constructor(props) {
         super(props);
-     }
 
-    getPost() {
-        let post = this.props.location.state;
-        return (
-            <Post post={post} key={post._id} />
-        )
+        this.state = {
+            title: '',
+            post: '',
+            tags: ''
+        };
 
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    handleChange(e) {   
+        const name = e.target.name; 
+        const value = e.target.value;
+        this.setState({
+          [name]: value
+        });   
+        
+      }
+
+    
+
+    handleSubmit(e) {
+        e.preventDefault();
+        const data = this.state;
+        console.log(data);
+
+  
+    
+    }
+
     
     render() {
+        let post = this.props.location.state;
         
         return (
-            <>{this.getPost()}</>
+            <form className={styles.form} onSubmit={this.handleSubmit}>
+                <label className={styles.formItem}>
+                    Title
+                    <input name='title' type='text' value={this.state.title} onChange={this.handleChange} required />
+                </label>
+                <label className={styles.formItem}>
+                    Post
+                    <textarea name='post' type='text' value={this.state.post} onChange={this.handleChange} required />
+                </label>
+                <label className={styles.formItem}>
+                    Tags
+                    <input name='tags' type='text' value={this.state.tags} onChange={this.handleChange} required />
+                </label>
+
+                <input className={styles.submit} type='submit' value='Submit' />
+            </form>
         );
     }
 }

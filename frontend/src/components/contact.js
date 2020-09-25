@@ -39,7 +39,7 @@ export default class Contact extends Component {
       }).catch((error) => {
         console.log(error);
       })
-    
+      
     
   }
 
