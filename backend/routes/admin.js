@@ -57,14 +57,6 @@ router.post('/login', async (req, res) => {
 
 });
 
-router.get('/cookie', async (req, res) => {
-  console.log('COOOKIIIIES');
-  res.cookie('intro','hello');
-  res.status(200);
-
-
-
-});
 
 
 module.exports = router;

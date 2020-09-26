@@ -1,9 +1,10 @@
 const router = require('express').Router();
 let Project = require('../models/project.model');
-let checkAdmin = require('../middleware/checkAdmin.js');
 
+const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 router.use(cookieParser());
+require('dotenv').config();
 
 /* Route Get (Everything) Request */
 router.route('/').get((req, res) => {
@@ -15,8 +16,25 @@ router.route('/').get((req, res) => {
 
 /* Update by ID Request (Protected) */ 
 router.route('/update/:id').post((req, res) => {
-    console.log(req.cookies);
+    token = req.cookies.jwt;
+    console.log(token);
 
+
+
+    jwt.verify(req.cookies.jwt, process.env.TOKEN_SECRET, (err, decoded) => {
+        if (err) {
+            //If error send Forbidden (403)
+            console.log('ERROR: Could not connect to the protected route');
+            res.sendStatus(403);
+        } else {
+            //If token is successfully verified, we can send the autorized data 
+            res.sendStatus(200);
+            console.log('SUCCESS: Connected to protected route');
+        }
+    })
+
+
+    /*
     Project.findById(req.params.id)
     .then(project => {
     project.title = req.body.title;
@@ -27,6 +45,9 @@ router.route('/update/:id').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
     })
     .catch(err => res.status(400).json('Error: ' + err));
+
+
+    */
 }); 
 
 

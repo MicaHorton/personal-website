@@ -37,7 +37,7 @@ export default class Edit extends Component {
         e.preventDefault();
        
         axios.post('http://localhost:5000/projects/update/' + this.state.id, this.state, {withCredentials: true})
-            .then(res => console.log(res.data)); 
+            .then(res => console.log(res)); 
         
         /*
         
