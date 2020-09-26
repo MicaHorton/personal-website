@@ -1,9 +1,15 @@
 const jwt = require('jsonwebtoken');
-const User = require('../models/User');
+const User = require('../models/user.model');
 require('dotenv').config();
+const cookieParser = require('cookie-parser');
+var express = require('express')
 
-const checkAuth = (req, res, next) => {
-  const token = req.cookies.jwt;
+var app = express();
+app.use(cookieParser());
+
+
+const checkAdmin = (req, res, next) => {
+  const token = req.cookies;
 
   // check json web token exists & is verified
   if (token) {
@@ -23,4 +29,6 @@ const checkAuth = (req, res, next) => {
   }
 };
 
-module.exports = checkAuth;
+
+
+module.exports = checkAdmin;

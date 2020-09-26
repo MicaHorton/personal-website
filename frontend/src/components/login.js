@@ -31,7 +31,7 @@ export default class Login extends Component {
     /* Development: http://localhost:5000/login */
     /* Production: https://api-dot-personal-website-279319.wl.r.appspot.com/login */
 
-    axios.post('http://localhost:5000/login', body)
+    axios.post('http://localhost:5000/login', body, {withCredentials: true, credentials: 'include'})
       .then(res => {
         console.log(res);
       }).catch((error) => {

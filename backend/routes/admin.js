@@ -5,7 +5,8 @@ const cookieParser = require('cookie-parser');
 router.use(cookieParser());
 require('dotenv').config();
 
-// Handle errors
+
+// Handle Errors Function
 const handleErrors = (err) => {
   console.log(err.message, err.code);
   let errors = { email: '', password: '' };
@@ -23,7 +24,7 @@ const handleErrors = (err) => {
   return errors;
 }
 
-// Create JWT Token
+// Create JWT Token Function
 const maxAge = 3 * 24 * 60 * 60;
 const createToken = (id) => {
   return jwt.sign({ id }, process.env.TOKEN_SECRET, {
@@ -31,19 +32,23 @@ const createToken = (id) => {
   });
 };
 
-// Login
-router.get('/login', (req, res) => {
-    res.send('get login');
-}); 
 
+// Login (To Get JWS Token)
 router.post('/login', async (req, res) => {
     const { email, password } = req.body;
     try {
       const user = await User.login(email, password);
       const token = createToken(user._id);
-      res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
-      console.log(token);
+
+      res.cookie('jwt', token, { httpOnly: false, maxAge: maxAge * 1000 });
+      res.send(token);
       res.status(201).json({ user: user._id });
+      console.log(token);
+
+      /*
+      res.status(201).json({ user: user._id });*/
+  
+   
 
     } catch (err) {
       const errors = handleErrors(err);
@@ -52,6 +57,14 @@ router.post('/login', async (req, res) => {
 
 });
 
+router.get('/cookie', async (req, res) => {
+  console.log('COOOKIIIIES');
+  res.cookie('intro','hello');
+  res.status(200);
+
+
+
+});
 
 
 module.exports = router;

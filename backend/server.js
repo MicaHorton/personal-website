@@ -8,8 +8,22 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(cors());
+var whitelist = ['http://localhost:3000']
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }, 
+  credentials: true
+}
+
+app.use(cors(corsOptions));
 app.use(express.json());
+
+
 
 // Connect To Mongoose
 const uri = process.env.ATLAS_URI;
@@ -20,11 +34,15 @@ connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
 
-// Connect Projects URL Ending to Router
+// Connect Projects Router
 const projectRouter = require('./routes/project');
 app.use('/projects', projectRouter);
 
-// Use Email URL Ending to Send Mail
+// Connect Admin Router
+const adminRouter = require('./routes/admin');
+app.use(adminRouter);
+
+// Send Mail with Email URL Ending
 app.post('/email', (req, res) => {
   res.json({message: 'Message recieved'});
   const {name, email, message} = req.body;
@@ -38,10 +56,6 @@ app.post('/email', (req, res) => {
       return res.json({ message: 'Email sent' });
   })
 })
-
-// Connect Auth Routers
-const adminRouter = require('./routes/admin');
-app.use(adminRouter);
 
 // Listen for Connection on Port 
 app.listen(port, () => {

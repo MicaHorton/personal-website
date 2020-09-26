@@ -1,5 +1,39 @@
+# JWT Tokens
 
-## To-Do
+- [x] on login submit, create token
+- [x] store token as cookie (excellent this works)
+
+- [ ] on admin route submit, send token
+- [ ] if token ok, authorize. if not, redirect
+
+- don't for get to set http only to true afterword
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - actually enable JWT tokens
 - post console.log 
 
@@ -33,3 +67,11 @@ https://www.youtube.com/watch?v=PnIjfte7284
 
 Example
 https://github.com/joaopedrodcf/blog-merns
+
+Useful Cors Configuration Stuff
+https://expressjs.com/en/resources/middleware/cors.html
+
+Preflight
+https://dev.to/effingkay/cors-preflighted-requests--options-method-3024
+
+- I think preflight request is triggered because of allow-credentials header. so it is more or less fixed... yay?

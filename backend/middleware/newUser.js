@@ -2,7 +2,6 @@
 1) Login to MongoDB
 2) Clone existing user document.
 3) Enter a new email and hashed password for them.
-
 */
 
 const bcrypt = require('bcrypt');

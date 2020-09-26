@@ -1,5 +1,9 @@
 const router = require('express').Router();
 let Project = require('../models/project.model');
+let checkAdmin = require('../middleware/checkAdmin.js');
+
+const cookieParser = require('cookie-parser');
+router.use(cookieParser());
 
 /* Route Get (Everything) Request */
 router.route('/').get((req, res) => {
@@ -9,7 +13,34 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+/* Update by ID Request (Protected) */ 
+router.route('/update/:id').post((req, res) => {
+    console.log(req.cookies);
+
+    Project.findById(req.params.id)
+    .then(project => {
+    project.title = req.body.title;
+    project.post = req.body.post;
+
+    project.save()
+        .then(() => res.json('Project updated!'))
+        .catch(err => res.status(400).json('Error: ' + err));
+    })
+    .catch(err => res.status(400).json('Error: ' + err));
+}); 
+
+
+
+
+
 /*
+/* Route Get by ID Request */ /*
+router.route('/:id').get((req, res) => {
+    Project.findById(req.params.id)
+      .then(projects => res.json(projects))
+      .catch(err => res.status(400).json('Error: ' + err));
+  }); */
+  
 /* Route Add Request */ /*
 router.route('/add').post((req, res) => {
   const title = req.body.title;
@@ -21,12 +52,6 @@ router.route('/add').post((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 }); */
 
-/* Route Get by ID Request */ /*
-router.route('/:id').get((req, res) => {
-    Project.findById(req.params.id)
-      .then(projects => res.json(projects))
-      .catch(err => res.status(400).json('Error: ' + err));
-  }); */
 
 /* Route Delete by ID Request */ /*
 router.route('/:id').delete((req, res) => {
