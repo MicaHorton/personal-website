@@ -1,6 +1,5 @@
-# Personal-Website
-My personal website (work in progress) built with the MERN stack. See at https://personal-website-279319.wl.r.appspot.com/
-
+# Personal Website
+My personal website (work in progress) built with the MERN stack. See at https://micahorton.com
 
 ## Deploy Instructions
 ### Frontend
