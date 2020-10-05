@@ -23,8 +23,10 @@ export default class Blog extends Component {
     }
 
     componentDidMount() {
+        
         /* Development: http://localhost:5000/projects */
         /* Production: https://api-dot-personal-website-279319.wl.r.appspot.com/projects */
+
         axios.get('https://api-dot-personal-website-279319.wl.r.appspot.com/projects') 
             .then(response => {
                 this.setState({ projects: response.data });

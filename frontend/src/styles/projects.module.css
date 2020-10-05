@@ -5,7 +5,7 @@
    
     /* Content Styling */
 
-    .box {
+    .box:not(Alert) {
         width: 450px;
         height: 400px;
         margin: 20px;

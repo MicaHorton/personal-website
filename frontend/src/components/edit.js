@@ -14,6 +14,7 @@ export default class Edit extends Component {
         this.state = {
             id: initial._id,
             title: initial.title,
+            description: initial.description,
             post: initial.post,
             tags: ''
         };
@@ -35,22 +36,19 @@ export default class Edit extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-       
-        axios.post('http://localhost:5000/projects/update/' + this.state.id, this.state, {withCredentials: true})
-            .then(res => console.log(res)); 
-        
-        /*
-        
-        axios.post('http://localhost:5000/update' + item._id) 
-        .then(response => {
-            this.setState({ posts: response.data });
-            console.log('Got a response!', this.state.posts);
-        })
-        .catch((error) => {
-            console.log(error);
-         }) */
 
-  
+        /* Development: http://localhost:5000/projects/update */
+        /* Production: https://api-dot-personal-website-279319.wl.r.appspot.com/email */
+
+       
+        axios.post('https://api-dot-personal-website-279319.wl.r.appspot.com/projects/update/' + this.state.id, this.state, {withCredentials: true})
+            .then(res => {
+                console.log(res);
+                this.props.history.push('/admin/console');
+
+            }).catch((error) => {
+                console.log(error);
+            })
     
     }
 
@@ -62,6 +60,10 @@ export default class Edit extends Component {
                 <label className={styles.formItem}>
                     Title
                     <input name='title' type='text' value={this.state.title} onChange={this.handleChange} required />
+                </label>
+                <label className={styles.formItem}>
+                    Description
+                    <input name='description' type='text' value={this.state.description} onChange={this.handleChange} required />
                 </label>
                 <label className={styles.formItem}>
                     Post

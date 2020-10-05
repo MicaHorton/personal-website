@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Redirect} from 'react-router-dom';
 import styles from '../styles/login.module.css';
 import axios from 'axios';
 
@@ -31,9 +32,12 @@ export default class Login extends Component {
     /* Development: http://localhost:5000/login */
     /* Production: https://api-dot-personal-website-279319.wl.r.appspot.com/login */
 
-    axios.post('http://localhost:5000/login', body, {withCredentials: true, credentials: 'include'})
+    axios.post('https://api-dot-personal-website-279319.wl.r.appspot.com/login', body, {withCredentials: true, credentials: 'include'})
       .then(res => {
         console.log(res);
+        this.props.history.push('/admin/console');
+
+
       }).catch((error) => {
         console.log(error);
       })

@@ -54,16 +54,5 @@ textarea {
   resize: none;
 }
 
-/*
-input, textarea {
-  font-size: inherit;
-  font-family: inherit;
-  font-weight: inherit;
-  color: #83818c;
+/* Alert Styling */
 
-  border: 1px line #83818c; 
-  border-radius: 2px;
-  outline: 0;
-  
-}
-*/
