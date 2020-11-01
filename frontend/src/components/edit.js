@@ -39,6 +39,8 @@ export default class Edit extends Component {
 
         /* Development: http://localhost:5000/projects/update */
         /* Production: https://api-dot-personal-website-279319.wl.r.appspot.com/email */
+        console.log('Something posted');
+        console.log(this.state)
 
        
         axios.post('https://api-dot-personal-website-279319.wl.r.appspot.com/projects/update/' + this.state.id, this.state, {withCredentials: true})

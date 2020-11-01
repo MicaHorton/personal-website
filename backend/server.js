@@ -8,7 +8,7 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-var whitelist = ['http://localhost:3000']
+var whitelist = ['http://localhost:3000', 'https://personal-website-279319.wl.r.appspot.com','https://micahorton.com','https://www.micahorton.com' ]
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {

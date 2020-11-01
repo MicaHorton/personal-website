@@ -5,6 +5,10 @@
    
     /* Content Styling */
 
+    .box {
+        font-family: 'DM Sans', sans-serif;
+    }
+
     .box:not(Alert) {
         width: 450px;
         height: 400px;
@@ -38,7 +42,8 @@
     }
 
     .readMore {
-        font-family: inherit;
+        font-family: 'DM Sans', sans-serif;
+        color: rgb(0,0,254);
         position: absolute;
         bottom: 20px;
         right: 50px;

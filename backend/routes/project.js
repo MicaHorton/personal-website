@@ -17,11 +17,9 @@ router.route('/').get((req, res) => {
 /* Update by ID Request (Protected) */ 
 router.route('/update/:id').post((req, res) => {
     token = req.cookies.jwt;
-    console.log(token);
 
 
-
-    jwt.verify(req.cookies.jwt, process.env.TOKEN_SECRET, (err, decoded) => {
+    jwt.verify(token, process.env.TOKEN_SECRET, (err, decoded) => {
         if (err) {
             //If error send Forbidden (403)
             console.log('ERROR: Could not connect to the protected route');
@@ -30,21 +28,23 @@ router.route('/update/:id').post((req, res) => {
             //If token is successfully verified, we can send the autorized data 
             res.sendStatus(200);
             console.log('SUCCESS: Connected to protected route');
-        }
+
+            Project.findById(req.params.id)
+                .then(project => {
+                project.title = req.body.title;
+                project.post = req.body.post;
+
+                project.save()
+                    .then(() => res.json('Project updated!'))
+                    .catch(err => res.status(400).json('Error: ' + err));
+                })
+                .catch(err => res.status(400).json('Error: ' + err));
+                    }
     })
 
 
     /*
-    Project.findById(req.params.id)
-    .then(project => {
-    project.title = req.body.title;
-    project.post = req.body.post;
-
-    project.save()
-        .then(() => res.json('Project updated!'))
-        .catch(err => res.status(400).json('Error: ' + err));
-    })
-    .catch(err => res.status(400).json('Error: ' + err));
+    
 
 
     */

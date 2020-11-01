@@ -10,7 +10,10 @@
 
 
 
+# Resources
 
+CORS Package Docs
+https://www.npmjs.com/package/cors
 
 
 
@@ -75,3 +78,6 @@ Preflight
 https://dev.to/effingkay/cors-preflighted-requests--options-method-3024
 
 - I think preflight request is triggered because of allow-credentials header. so it is more or less fixed... yay?
+
+How to JWS Verify & Protect Route
+https://medium.com/@maison.moa/using-jwt-json-web-tokens-to-authorize-users-and-protect-api-routes-3e04a1453c3e
