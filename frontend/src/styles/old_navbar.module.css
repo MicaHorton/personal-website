@@ -7,10 +7,7 @@
 }
 
 body {
-    text-align: center;
     display: flex;
-    height: 100vh;
-    width: 100%;
     justify-content: center;
     align-items: flex-start;
     padding: 0 20px;
@@ -41,37 +38,23 @@ body {
     position: relative;
 }
 
-.navItem.active.orange {
+.active.orange {
     color: orange;
 }
 
-.navItem.active.green {
+.active.green {
     color: green;
 }
 
-.navItem.active.red {
+.active.red {
     color: red;
 }
 
-.navItem.active.purple {
+.active.purple {
     color: purple;
 }
 
-.navItem:not(.active).orange:hover { 
-    color:orange; 
-}
 
-.navItem:not(.active).green:hover { 
-    color:green; 
-}
-
-.navItem:not(.active).red:hover { 
-    color:red; 
-}
-
-.navItem:not(.active).purple:hover { 
-    color:purple; 
-}
   
 /* Navbar Indicator */
 .navIndicator {
@@ -98,6 +81,14 @@ body {
     transition: .3s;
 }
 
+.navItem:hover:before {
+    opacity: 1;
+    bottom: 0;
+}
+
+.navItem:not(.active):hover { color: #333; }
+
+
 @media (max-width: 580px) {
     .nav { overflow: auto; }
 }
@@ -121,27 +112,5 @@ body {
 }
 
 .navItem.active.purple::before {
-    background-color: purple;
-}
-
-
-.navItem:not(.active):hover:before {
-    opacity: 1;
-    bottom: 0;
-}
-
-.navItem:not(.active).orange:hover:before {
-    background-color: orange;
-}
-
-.navItem:not(.active).green:hover:before {
-    background-color: green;
-}
-
-.navItem:not(.active).red:hover:before {
-    background-color: red;
-}
-
-.navItem:not(.active).purple:hover:before {
     background-color: purple;
 }

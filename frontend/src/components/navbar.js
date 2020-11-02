@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import styles from '../styles/altnavbar.module.css';
+import styles from '../styles/navbar.module.css';
 
 export default class Navbar extends Component {
   constructor (props) {
