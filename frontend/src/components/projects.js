@@ -20,7 +20,13 @@ export default class Projects extends Component {
           </ul>
 
           <h2>Python Scripts</h2>
+          <ul>
             <li>webscraper script</li>
+            <li>personal database</li>
+            <li></li>
+
+          </ul>
+            
 
           <h2>Other</h2>
          
