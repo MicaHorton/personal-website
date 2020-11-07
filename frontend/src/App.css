@@ -37,6 +37,10 @@ h1 {
     padding-top: 20px;
     font-weight: 700;
 }
+
+a {
+    font-style: italic;
+}
   
 /* Icons and Links Styling */
 
