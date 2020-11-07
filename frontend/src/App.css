@@ -38,9 +38,6 @@ h1 {
     font-weight: 700;
 }
 
-a {
-    font-style: italic;
-}
   
 /* Icons and Links Styling */
 
@@ -65,6 +62,10 @@ a {
     text-decoration: inherit;
     font-size: inherit;
     font-weight: inherit;
+}
+
+.miniLink {
+    font-style: italic;
 }
 
 /* Form Styling */

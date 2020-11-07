@@ -36,7 +36,7 @@ export default class About extends Component {
             <h1>Events I've Gone To</h1>
             <ul>
               <li>LAHS Hacks IV</li>
-              <li>Superposition Hacks IV (<a href='https://github.com/MicaHorton/hqrecycle' target='_blank'>see project</a>)</li>
+              <li>Superposition Hacks IV (<a href='https://github.com/MicaHorton/hqrecycle' target='_blank' className='miniLink'>see project</a>)</li>
               <li>Bay Area Science Fesitval</li>
               <li>NIMBLE Youth Innovation Showcase</li>
             </ul>
