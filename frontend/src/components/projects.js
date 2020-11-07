@@ -79,9 +79,7 @@ export default class Blog extends Component {
                     <button onClick={this.handleTagClick} className={styles.tag}>All</button>
                     <button onClick={this.handleTagClick} className={styles.tag}>Python</button>
                 </div>
-        
                 <div className={styles.content}>{content}</div>
-    
             </main>
         )
                   
@@ -89,8 +87,3 @@ export default class Blog extends Component {
   }
 
 
-/*
-Possible things wrong:
-- Application doesn't have permission to access service api
-- For deployement: axios.get('https://api-dot-personal-website-279319.wl.r.appspot.com:5000/projects')
-*/
