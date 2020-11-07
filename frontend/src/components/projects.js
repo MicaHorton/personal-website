@@ -6,14 +6,14 @@ const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
 const Project = props => (
-    <div className={styles.box}>
+    <article>
         <h1>{props.project.title}</h1>
         <p>{props.project.description}</p>
         <Link to={{
             pathname: '/single/' + props.project._id,
             state: props.project
         }} className={styles.readMore}>read more</Link>
-    </div>
+    </article>
 ) 
 
 export default class Blog extends Component {
@@ -72,15 +72,17 @@ export default class Blog extends Component {
 
 
         return (
-            <>
-            <div className={styles.tagbar}>
-                <span className={styles.filter}>Filter</span>
-                <button onClick={this.handleTagClick} className={styles.tag}>All</button>
-                <button onClick={this.handleTagClick} className={styles.tag}>Python</button>
-            </div>
+            
+            <main>
+                <div className={styles.tagbar}>
+                    <span className={styles.filter}>Filter</span>
+                    <button onClick={this.handleTagClick} className={styles.tag}>All</button>
+                    <button onClick={this.handleTagClick} className={styles.tag}>Python</button>
+                </div>
+        
+                <div className={styles.content}>{content}</div>
     
-            <div className={styles.content}>{content}</div>
-            </>
+            </main>
         )
                   
     }
