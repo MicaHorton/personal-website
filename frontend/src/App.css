@@ -37,6 +37,14 @@ h1 {
     padding-top: 20px;
     font-weight: 700;
 }
+
+h2 {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    text-decoration: underline ;
+
+}
   
 /* Icons and Links Styling */
 
