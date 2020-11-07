@@ -42,12 +42,10 @@ h2 {
     color: black;
     font-size: 25px;
     font-style: italic;
-    text-decoration: underline ;
-
+    text-decoration: underline;
 }
   
 /* Icons and Links Styling */
-
 .icons li {
     display: flex;
     flex-direction: row;
@@ -69,6 +67,10 @@ a {
     text-decoration: inherit;
     font-size: inherit;
     font-weight: inherit;
+}
+
+.miniLink {
+    font-style: italic;
 }
 
 /* Form Styling */

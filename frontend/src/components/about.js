@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import 'font-awesome/css/font-awesome.min.css';
 
-/*
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';*/
-
-
 export default class About extends Component {
   render() {
     return (
@@ -41,9 +36,9 @@ export default class About extends Component {
             <h1>Events I've Gone To</h1>
             <ul>
               <li>LAHS Hacks IV</li>
-              <li>Superposition Hacks IV (see project)</li>
-              <li>Bay Area Science Fesitval (see project)</li>
-              <li>NIMBLE Youth Innovation Showcase (see project)</li>
+              <li>Superposition Hacks IV (<a href='https://github.com/MicaHorton/hqrecycle' target='_blank' className='miniLink'>see project</a>)</li>
+              <li>Bay Area Science Fesitval</li>
+              <li>NIMBLE Youth Innovation Showcase</li>
             </ul>
         </section>
 
