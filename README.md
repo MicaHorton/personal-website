@@ -1,7 +1,10 @@
 # Personal Website
 My personal website (work in progress) built with the MERN stack. See at https://micahorton.com
 
+## Technologies Used
+
 ## Deploy Instructions
+
 ### Frontend
 1) Build react app
 ```

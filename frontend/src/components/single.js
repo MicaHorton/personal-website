@@ -29,7 +29,10 @@ export default class Single extends Component {
     
     render() {
         return (
-            <>{this.getPost()}</>
+            <main>
+                {this.getPost()}
+            </main>
+     
         );
     }
 }

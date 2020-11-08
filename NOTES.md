@@ -15,35 +15,6 @@
 CORS Package Docs
 https://www.npmjs.com/package/cors
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- actually enable JWT tokens
-- post console.log 
-
-
-
-## Resources
-
 MERN Tutorial
 https://www.youtube.com/watch?v=7CqJlxBYj-M&t=2437s
 

@@ -38,9 +38,14 @@ h1 {
     font-weight: 700;
 }
 
+h2 {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    text-decoration: underline;
+}
   
 /* Icons and Links Styling */
-
 .icons li {
     display: flex;
     flex-direction: row;
@@ -64,8 +69,12 @@ a {
     font-weight: inherit;
 }
 
-.miniLink {
+.italicLink {
     font-style: italic;
+}
+
+.blueLink {
+    color: blue;
 }
 
 /* Form Styling */

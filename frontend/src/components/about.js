@@ -10,7 +10,7 @@ export default class About extends Component {
           <h1>Hi, my name is Mica Horton</h1>
           <p>I'm an LAHS student living in the Bay Area who loves to code. 
             This website is a tribute to all the projects I've done. 
-            Check out my blog or learn more about me at:</p>
+            Check out my <a href='https://www.micahorton.com/projects'>projects</a>/<a href='https://www.micahorton.com/blog'>blog</a> or learn more about me at:</p>
 
             <ul className="icons">
               <li><i className="fa fa-github"></i><a href="https://github.com/MicaHorton" target="_blank">GitHub</a></li>
@@ -36,7 +36,7 @@ export default class About extends Component {
             <h1>Events I've Gone To</h1>
             <ul>
               <li>LAHS Hacks IV</li>
-              <li>Superposition Hacks IV (<a href='https://github.com/MicaHorton/hqrecycle' target='_blank' className='miniLink'>see project</a>)</li>
+              <li>Superposition Hacks IV (<a href='https://github.com/MicaHorton/hqrecycle' target='_blank' className='italicLink'>see project</a>)</li>
               <li>Bay Area Science Fesitval</li>
               <li>NIMBLE Youth Innovation Showcase</li>
             </ul>
