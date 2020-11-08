@@ -69,8 +69,12 @@ a {
     font-weight: inherit;
 }
 
-.miniLink {
+.italicLink {
     font-style: italic;
+}
+
+.blueLink {
+    color: blue;
 }
 
 /* Form Styling */

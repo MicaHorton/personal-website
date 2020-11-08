@@ -21,7 +21,7 @@ export default class Navbar extends Component {
     return (
       <nav className={styles.nav}>
         <Link to="/" className={`${styles.navItem} ${styles.orange} ${this.state.active[0] && styles.active}`} onClick={() => this.handleClick(0)} >About</Link>
-        <Link to="/projects"  className={`${styles.navItem} ${styles.green} ${this.state.active[1] && styles.active}`} >Projects</Link>
+        <Link to="/projects"  className={`${styles.navItem} ${styles.green} ${this.state.active[1] && styles.active}`} onClick={() => this.handleClick(1)} >Projects</Link>
         <Link to="/blog" className={`${styles.navItem} ${styles.red} ${this.state.active[2] && styles.active}`} onClick={() => this.handleClick(2)} >Blog</Link>
         <Link to="/contact" className={`${styles.navItem} ${styles.purple} ${this.state.active[3] && styles.active}`} onClick={() => this.handleClick(3)} >Contact</Link>
         <span className={`${styles.navIndicator} 
