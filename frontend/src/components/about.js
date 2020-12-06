@@ -13,9 +13,9 @@ export default class About extends Component {
             Check out my <a href='https://www.micahorton.com/projects'>projects</a>/<a href='https://www.micahorton.com/blog'>blog</a> or learn more about me at:</p>
 
             <ul className="icons">
-              <li><i className="fa fa-github"></i><a href="https://github.com/MicaHorton" target="_blank">GitHub</a></li>
-              <li><i className="fa fa-stack-overflow"></i><a href="https://stackoverflow.com/users/13029356/mica-horton?tab=profile" target="_blank">Stack Overflow</a></li>
-              <li><i className="fa fa-linkedin-square"></i><a href="https://github.com/MicaHorton" target="_blank">LinkedIn</a></li>
+              <li><i className="fa fa-github"></i><a href="https://github.com/MicaHorton" target="_blank" rel="noreferrer">GitHub</a></li>
+              <li><i className="fa fa-stack-overflow"></i><a href="https://stackoverflow.com/users/13029356/mica-horton?tab=profile" target="_blank" rel="noreferrer">Stack Overflow</a></li>
+              <li><i className="fa fa-linkedin-square"></i><a href="https://github.com/MicaHorton" target="_blank" rel="noreferrer">LinkedIn</a></li>
             </ul>
         </section>
         
@@ -36,7 +36,7 @@ export default class About extends Component {
             <h1>Events I've Gone To</h1>
             <ul>
               <li>LAHS Hacks IV</li>
-              <li>Superposition Hacks IV (<a href='https://github.com/MicaHorton/hqrecycle' target='_blank' className='italicLink'>see project</a>)</li>
+              <li>Superposition Hacks IV (<a href='https://github.com/MicaHorton/hqrecycle' target='_blank' rel="noreferrer" className='italicLink'>see project</a>)</li>
               <li>Bay Area Science Fesitval</li>
               <li>NIMBLE Youth Innovation Showcase</li>
             </ul>

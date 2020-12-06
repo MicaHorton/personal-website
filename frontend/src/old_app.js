@@ -7,11 +7,9 @@ import Projects from "./components/projects.js";
 import Blog from "./components/blog.js";
 import Single from './components/single.js';
 import Contact from './components/contact.js';
-
-/*
 import Login from './components/login.js';
 import Console from './components/console.js';
-import Edit from './components/edit.js';*/
+import Edit from './components/edit.js';
 
 const Default = () => (
   <div>
@@ -24,7 +22,7 @@ const Default = () => (
     </div>
 );
 
-/*
+
 const Admin = () => (
   <div>
     <Switch>
@@ -35,13 +33,14 @@ const Admin = () => (
     </Switch>
       
   </div>
-);*/
+);
 
 function App() {
   return (
   <Router>
 
     <Switch>
+      <Route path='/admin' component={Admin}/>
       <Route component={Default}/>
     </Switch>
 

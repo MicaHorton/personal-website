@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../styles/blog.module.css';
 import axios from 'axios';
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
+/*
+const jsdom = require('jsdom');
+const { JSDOM } = jsdom;*/
 
 const Project = props => (
     <article>
