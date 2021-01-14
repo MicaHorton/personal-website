@@ -10,7 +10,7 @@ export default class Single extends Component {
         super(props);
      }
 
-    getPost() {
+    getPost = () => {
 
         /*
         let doc = new JSDOM(this.props.location.state.post);
@@ -24,7 +24,6 @@ export default class Single extends Component {
         } */
 
         let doc = this.props.location.state.post;
-
         let item = doc.window.document.body.outerHTML; 
 
         return (
@@ -36,7 +35,7 @@ export default class Single extends Component {
     render() {
         return (
             <main>
-                {this.getPost()}
+                {this.getPost}
             </main>
      
         );

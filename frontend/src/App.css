@@ -62,12 +62,21 @@ h2 {
     margin-left: 10px;
 }
 
-a {
+a, button {
     color: inherit; 
     text-decoration: inherit;
     font-size: inherit;
     font-weight: inherit;
 }
+
+button {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-style: inherit;
+    padding: inherit;
+}
+
 
 .italicLink {
     font-style: italic;
