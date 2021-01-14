@@ -5,7 +5,6 @@ const cookieParser = require('cookie-parser');
 router.use(cookieParser());
 require('dotenv').config();
 
-
 // Handle Errors Function
 const handleErrors = (err) => {
   console.log(err.message, err.code);
@@ -47,8 +46,6 @@ router.post('/login', async (req, res) => {
 
       /*
       res.status(201).json({ user: user._id });*/
-  
-   
 
     } catch (err) {
       const errors = handleErrors(err);
@@ -56,7 +53,5 @@ router.post('/login', async (req, res) => {
     }
 
 });
-
-
 
 module.exports = router;

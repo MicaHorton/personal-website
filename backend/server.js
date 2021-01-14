@@ -23,8 +23,6 @@ var corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
-
-
 // Connect To Mongoose
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });

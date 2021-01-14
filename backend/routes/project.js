@@ -18,7 +18,6 @@ router.route('/').get((req, res) => {
 router.route('/update/:id').post((req, res) => {
     token = req.cookies.jwt;
 
-
     jwt.verify(token, process.env.TOKEN_SECRET, (err, decoded) => {
         if (err) {
             //If error send Forbidden (403)

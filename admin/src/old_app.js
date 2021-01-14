@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
-import Navbar from "./components/navbar.js";
-import About from "./components/about.js";
-import Projects from "./components/projects.js";
-import Blog from "./components/blog.js";
-import Single from './components/single.js';
-import Contact from './components/contact.js';
+import Navbar from "../../frontend/src/components/navbar.js";
+import About from "../../frontend/src/components/about.js";
+import Projects from "../../frontend/src/components/projects.js";
+import Blog from "../../frontend/src/components/blog.js";
+import Single from '../../frontend/src/components/single.js';
+import Contact from '../../frontend/src/components/contact.js';
 import Login from './components/login.js';
 import Console from './components/console.js';
 import Edit from './components/edit.js';

@@ -52,3 +52,10 @@ https://dev.to/effingkay/cors-preflighted-requests--options-method-3024
 
 How to JWS Verify & Protect Route
 https://medium.com/@maison.moa/using-jwt-json-web-tokens-to-authorize-users-and-protect-api-routes-3e04a1453c3e
+
+
+
+# Add To Resume
+
+- foothill honors institute
+
