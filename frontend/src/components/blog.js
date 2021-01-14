@@ -1,21 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { getAllPosts } from '../api.js';
 import styles from '../styles/blog.module.css';
-import axios from 'axios';
-/*
-const jsdom = require('jsdom');
-const { JSDOM } = jsdom;*/
 
-const Project = props => (
+const Post = props => (
     <article>
         <h1>{props.project.title}</h1>
         <p>{props.project.description}</p>
-        <Link to={{
-            pathname: '/single/' + props.project._id,
-            state: props.project
-        }} className={styles.readMore}>read more</Link>
+        <Link to={{pathname: '/single/' + props.project._id}}
+         className={styles.readMore}>read more</Link>
     </article>
-) 
+)
+
 
 export default class Blog extends Component {
     constructor (props) {
@@ -24,24 +20,18 @@ export default class Blog extends Component {
     }
 
     componentDidMount() {
-        
-        /* Development: http://localhost:5000/projects */
-        /* Production: https://api-dot-personal-website-279319.wl.r.appspot.com/projects */
-
-        axios.get('https://api-dot-personal-website-279319.wl.r.appspot.com/projects') 
-            .then(response => {
-                this.setState({ projects: response.data });
-                console.log('Got a response!');
-            })
-            .catch((error) => {
-                console.log(error);
-             })
+        getAllPosts()
+        .then(projects => {
+            this.setState({ projects: projects });
+            console.log('set projects')
+        })
+        .catch(err => console.log(err))
     }
 
     listAll() {
         return this.state.projects.map(current => {
             console.log('List all was run')
-            return <Project project={current} key={current._id}/>;
+            return <Post project={current} key={current._id}/>;
         })
     }
 
@@ -50,7 +40,7 @@ export default class Blog extends Component {
         return this.state.projects.map(currentProject => {
             return currentProject.tags.map(currentTag => {
                 if (currentTag === tag) {
-                    return <Project project={currentProject} key={currentProject._id}/>;
+                    return <Post project={currentProject} key={currentProject._id}/>;
                 }
             })
         })  

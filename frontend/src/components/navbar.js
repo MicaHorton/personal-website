@@ -10,7 +10,6 @@ export default class Navbar extends Component {
   }
 
   handleClick(current) { 
-    
     const newActive = [false, false, false, false];
     newActive[current] = true;
     this.setState({active: newActive});  

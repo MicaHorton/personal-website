@@ -1,51 +1,31 @@
 import React, { Component } from 'react';
+import { getSinglePost } from '../api.js';
 import styles from '../styles/single.module.css';
-/*
-const jsdom = require('jsdom');
-const { JSDOM } = jsdom;*/
-
 
 export default class Single extends Component {
     constructor(props) {
         super(props);
+        this.state = { postId: this.props.match.params.id,
+                       post: null };
      }
 
-    getPost = () => {
-
-        /*
-        let doc = new JSDOM(this.props.location.state.post);
-        // doc.window.document.body.querySelector('h1').remove(); 
-        let p = doc.window.document.body.getElementsByTagName('p');
-        
-        for (let i = 0; i < p.length; i++) {
-            if (p[i].innerHTML === '&nbsp;') {
-                p[i].remove();
-            }
-        } */
-
-        let doc = this.props.location.state.post;
-        let item = doc.window.document.body.outerHTML; 
-
-        return (
-            <div className={styles.box} dangerouslySetInnerHTML={{__html: item}}></div>
-        )
-
+    componentDidMount() {
+        getSinglePost(this.state.postId)
+        .then(data => this.setState({ post: data.sanatizedHtml }))
+        .catch(err => console.log(err))
     }
+
     
     render() {
-        return (
-            <main>
-                {this.getPost}
-            </main>
-     
-        );
+        if (this.state.post) {
+            return (
+                <main>
+                    <div className={styles.box} dangerouslySetInnerHTML={{ __html: this.state.post }} />         
+                </main>
+            );
+        } 
+
+        return null;
     }
 }
 
-/* fix loading single JS first 
-else {
-            return (
-                <p>undefined</p>
-            )
-        }
-*/
