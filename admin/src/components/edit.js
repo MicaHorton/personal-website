@@ -1,48 +1,53 @@
-import axios from 'axios';
 import React, { Component } from 'react';
+import { getSinglePost, updatePost } from '../api.js'
 import styles from '../styles/edit.module.css';
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-
 
 
 export default class Edit extends Component {
     constructor(props) {
         super(props);
-        let initial = this.props.location.state;
-
         this.state = {
-            id: initial._id,
-            title: initial.title,
-            description: initial.description,
-            post: initial.post,
+            id: this.props.match.params.id,
+            title: '',
+            description: '',
+            markdown: '',
             tags: ''
         };
-
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(e) {   
+    componentDidMount() {
+        getSinglePost(this.state.id)
+        .then(initial => this.setState({
+            title: initial.title,
+            description: initial.description,
+            markdown: initial.markdown
+        }))
+        .catch(err => console.log(err))
+
+
+    }
+
+    handleChange = (e) => {   
         const name = e.target.name; 
         const value = e.target.value;
         this.setState({
           [name]: value
         });   
-        
-      }
+    }
 
-    
 
-    handleSubmit(e) {
+
+    handleSubmit = (e) => {
         e.preventDefault();
+        const post = this.state;
 
-        /* Development: http://localhost:5000/projects/update */
-        /* Production: https://api-dot-personal-website-279319.wl.r.appspot.com/email */
-        console.log('Something posted');
-        console.log(this.state)
+        updatePost(post)
+        .then(res => {
+            console.log(res);
 
-       
+        }).catch(err => console.log(err))
+
+        /*
         axios.post('https://api-dot-personal-website-279319.wl.r.appspot.com/projects/update/' + this.state.id, this.state, {withCredentials: true})
             .then(res => {
                 console.log(res);
@@ -50,34 +55,35 @@ export default class Edit extends Component {
 
             }).catch((error) => {
                 console.log(error);
-            })
+            })*/
     
     }
 
     
     render() {
-    
         return (
-            <form className={styles.form} onSubmit={this.handleSubmit}>
-                <label className={styles.formItem}>
-                    Title
-                    <input name='title' type='text' value={this.state.title} onChange={this.handleChange} required />
-                </label>
-                <label className={styles.formItem}>
-                    Description
-                    <input name='description' type='text' value={this.state.description} onChange={this.handleChange} required />
-                </label>
-                <label className={styles.formItem}>
-                    Post
-                    <textarea name='post' type='text' value={this.state.post} onChange={this.handleChange} required />
-                </label>
-                <label className={styles.formItem}>
-                    Tags
-                    <input name='tags' type='text' onChange={this.handleChange}  />
-                </label>
-
-                <input className={styles.submit} type='submit' value='Submit' />
-            </form>
+            <main>
+                <form className={styles.form} onSubmit={this.handleSubmit}>
+                    <label className={styles.formItem}>
+                        Title
+                        <input name='title' type='text' value={this.state.title} onChange={this.handleChange} required />
+                    </label>
+                    <label className={styles.formItem}>
+                        Description
+                        <textarea name='description' rows='10' type='text' value={this.state.description} onChange={this.handleChange} required />
+                    </label>
+                    <label className={styles.formItem}>
+                        Markdown
+                        <textarea name='markdown' type='text' rows='15' value={this.state.post} onChange={this.handleChange} required />
+                    </label>
+                    <label className={styles.formItem}>
+                        Tags
+                        <input name='tags' type='text' onChange={this.handleChange}  />
+                    </label>
+                    <input className={styles.submit} type='submit' value='Submit' />
+                </form>
+            </main>
+            
         );
     }
 }

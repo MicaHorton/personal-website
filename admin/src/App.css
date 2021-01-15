@@ -1,38 +1,123 @@
-.App {
+body {
+  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/debut_light.png");
   text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+  font-family: 'DM Sans', sans-serif;
+  font-size: 20px;
+  color: #83818c;
+  outline: 0;
+} 
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: left;
 }
 
-.App-link {
-  color: #61dafb;
+section {
+  width: 70vw;
+  min-height: 30vh;
+  margin-top: 30px;
+
+  background-color: #fff;
+  border-radius: 40px;
+  box-shadow: 0 10px 40px rgba(159, 162, 177, .8);
+  padding-bottom: 30px;
+  
+  font-weight: 500;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+h1 {
+  color: black;
+  font-size: 30px;
+  padding-top: 20px;
+  font-weight: 700;
+}
+
+h2 {
+  color: black;
+  font-size: 25px;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+/* Icons and Links Styling */
+.icons li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.icons li i {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.icons li a {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+a, button {
+  color: inherit; 
+  text-decoration: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-style: inherit;
+  padding: inherit;
+}
+
+
+.italicLink {
+  font-style: italic;
+}
+
+.blueLink {
+  color: blue;
+}
+
+/* Form Styling */
+label {
+  display: flex;
+  flex-flow: column;
+  margin-bottom: 15px;
+}
+
+input, textarea {
+  font-size: 17px;
+  font-family: inherit;
+  font-weight: 500;
+  padding: 5px;
+
+  border: 1px solid #83818c; 
+  border-radius: 3px;
+  margin-top: 5px;
+}
+
+textarea {
+  resize: none;
+}
+
+
+/* Media Queries */
+
+@media (min-width: 1224px) {
+  section {
+      width: 65vw;
   }
-  to {
-    transform: rotate(360deg);
+
+  section li {
+      margin-left: 1em; 
   }
 }
+
