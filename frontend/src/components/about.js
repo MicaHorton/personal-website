@@ -48,7 +48,7 @@ export default class About extends Component {
               <li> President of Adventure Club, the hiking and camping club focused on going outside even though staying home and programming is fun too. (See our Instagram @lahsadventureclub.) </li>
               <li> Passed John Hopkins Center of Talented Youth Assessment </li>
               <li> Received Challenger Merit Scholarship </li>
-              <li> Learning Spanish speaker in Spanish III Honors. Received the silver metal for the NHS Spanish exam. </li>
+              <li> Studied Spanish for 4 years, currently enrolled in SPAN 5. Received the silver metal for the NHS Spanish exam. </li>
               <li> Has completed 20 service hours volunteering at the local TV station (the KMVT) as a cinematographer. </li>
             </ul>
         </section>

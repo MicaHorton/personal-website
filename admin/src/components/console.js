@@ -35,6 +35,7 @@ export default class Console extends Component {
         if (this.state.posts) {
             return (
                 <main>
+                    <div className={styles.header}><h1>Mica's Admin Console</h1></div>
                     {this.listPosts()}
                 </main>
             )

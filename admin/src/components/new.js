@@ -15,18 +15,6 @@ export default class Edit extends Component {
         };
     }
 
-    componentDidMount() {
-        getSinglePost(this.state.id)
-        .then(initial => this.setState({
-            title: initial.title,
-            description: initial.description,
-            markdown: initial.markdown
-        }))
-        .catch(err => console.log(err))
-
-
-    }
-
     handleChange = (e) => {   
         const name = e.target.name; 
         const value = e.target.value;

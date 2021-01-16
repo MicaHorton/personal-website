@@ -55,6 +55,10 @@ https://medium.com/@maison.moa/using-jwt-json-web-tokens-to-authorize-users-and-
 
 
 
+Deal with Multiple Profiles (maybe should put in package.json or can export AWS_PROFILE beforehand)
+
+https://stackoverflow.com/questions/50832048/credential-not-load-in-claudiajs-hello-word-example-for-aws
+
 # Add To Resume
 
 - foothill honors institute

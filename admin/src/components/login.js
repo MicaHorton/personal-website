@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styles from '../styles/login.module.css';
 import { login } from '../api.js';
-import axios from 'axios';
 
 export default class Login extends Component {
     constructor (props) {
@@ -39,7 +38,6 @@ export default class Login extends Component {
     }
 
     render() {
-
         return (
             <main>
                 <div className={styles.box}>
@@ -57,7 +55,6 @@ export default class Login extends Component {
                     </form>
                 </div>
             </main>
-                
         );
     }
 }
