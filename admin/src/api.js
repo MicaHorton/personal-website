@@ -1,6 +1,6 @@
 import axios from 'axios';
-/* const base = 'https://api.micahorton.com/'; */
-const base = 'http://localhost:5000/'; 
+const base = 'https://api.micahorton.com/'; 
+/* const base = 'http://localhost:5000/'; */
 
 export const getAllPosts = () => {
     return axios.get(base)
@@ -31,6 +31,18 @@ export const updatePost = post => {
         return err
     })
 }
+
+export const addPost = post => {
+    return axios.post(base + 'add', post, {withCredentials: true})
+    .then(res => {
+        return res.data
+    })
+    .catch(err => {
+        return err
+    })
+}
+
+
 export const login = credentials => {
     return axios.post(base + 'login', credentials, {withCredentials: true, credentials: 'include'})
     .then(res => {

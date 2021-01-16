@@ -1,123 +1,144 @@
 body {
-  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/debut_light.png");
-  text-align: center;
+    background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/debut_light.png");
+    text-align: center;
 
-  font-family: 'DM Sans', sans-serif;
-  font-size: 20px;
-  color: #83818c;
-  outline: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
+    color: #83818c;
+    outline: 0;
 } 
 
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
 }
 
 section {
-  width: 70vw;
-  min-height: 30vh;
-  margin-top: 30px;
+    width: 70vw;
+    min-height: 30vh;
+    margin-top: 30px;
 
-  background-color: #fff;
-  border-radius: 40px;
-  box-shadow: 0 10px 40px rgba(159, 162, 177, .8);
-  padding-bottom: 30px;
-  
-  font-weight: 500;
-  padding-left: 50px;
-  padding-right: 50px;
+    background-color: #fff;
+    border-radius: 40px;
+    box-shadow: 0 10px 40px rgba(159, 162, 177, .8);
+    padding-bottom: 30px;
+    
+    font-weight: 500;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 
 h1 {
-  color: black;
-  font-size: 30px;
-  padding-top: 20px;
-  font-weight: 700;
+    color: black;
+    font-size: 30px;
+    padding-top: 20px;
+    font-weight: 700;
 }
 
 h2 {
-  color: black;
-  font-size: 25px;
-  font-style: italic;
-  text-decoration: underline;
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    text-decoration: underline;
 }
 
 /* Icons and Links Styling */
 .icons li {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .icons li i {
-  font-size: 40px;
-  margin-bottom: 10px;
+    font-size: 40px;
+    margin-bottom: 10px;
 }
 
 .icons li a {
-  font-size: 20px;
-  margin-left: 10px;
+    font-size: 20px;
+    margin-left: 10px;
 }
 
 a, button {
-  color: inherit; 
-  text-decoration: inherit;
-  font-size: inherit;
-  font-weight: inherit;
+    color: inherit; 
+    text-decoration: inherit;
+    font-size: inherit;
+    font-weight: inherit;
 }
 
 button {
-  background: none;
-  border: none;
-  font-family: inherit;
-  font-style: inherit;
-  padding: inherit;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-style: inherit;
+    padding: inherit;
 }
 
 
 .italicLink {
-  font-style: italic;
+    font-style: italic;
 }
 
 .blueLink {
-  color: blue;
+    color: blue;
 }
 
 /* Form Styling */
 label {
-  display: flex;
-  flex-flow: column;
-  margin-bottom: 15px;
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 15px;
 }
 
 input, textarea {
-  font-size: 17px;
-  font-family: inherit;
-  font-weight: 500;
-  padding: 5px;
+    font-size: 17px;
+    font-family: inherit;
+    font-weight: 500;
+    padding: 5px;
 
-  border: 1px solid #83818c; 
-  border-radius: 3px;
-  margin-top: 5px;
+    border: 1px solid #83818c; 
+    border-radius: 3px;
+    margin-top: 5px;
 }
 
 textarea {
-  resize: none;
+    resize: none;
 }
 
 
+/* Add Page Styling */
+
+.add-button {
+    width: 180px;
+    height: 50px;
+
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    border: none;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 10px 40px rgba(159, 162, 177, .8);
+
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+}
+
 /* Media Queries */
-
 @media (min-width: 1224px) {
-  section {
-      width: 65vw;
-  }
+    section {
+            width: 65vw;
+    }
 
-  section li {
-      margin-left: 1em; 
-  }
+    section li {
+            margin-left: 1em; 
+    }
 }
 

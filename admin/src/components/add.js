@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getSinglePost, updatePost } from '../api.js'
+import { updatePost } from '../api.js'
 import styles from '../styles/edit.module.css';
 
 
@@ -27,7 +27,7 @@ export default class Edit extends Component {
         e.preventDefault();
         const post = this.state;
 
-        updatePost(post)
+        addPost(post)
         .then(res => {
             console.log(res);
             this.props.history.push('/');
@@ -38,7 +38,9 @@ export default class Edit extends Component {
     render() {
         return (
             <main>
+                <h1 className='form-header'>Add New Post</h1>
                 <form className={styles.form} onSubmit={this.handleSubmit}>
+                   
                     <label className={styles.formItem}>
                         Title
                         <input name='title' type='text' value={this.state.title} onChange={this.handleChange} required />

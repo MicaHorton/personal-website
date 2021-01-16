@@ -37,6 +37,7 @@ export default class Console extends Component {
                 <main>
                     <div className={styles.header}><h1>Mica's Admin Console</h1></div>
                     {this.listPosts()}
+                    <Link to='/add' className='add-button'>Add New Post</Link>
                 </main>
             )
         }

@@ -39,7 +39,7 @@
 /* Post Styling */
 .post {
     width: 80vw;
-    min-height: 8vh;
+    min-height: 4vw;
     padding-left: 20px;
 
     display: flex;

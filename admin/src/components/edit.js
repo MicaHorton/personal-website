@@ -61,7 +61,7 @@ export default class Edit extends Component {
                     </label>
                     <label className={styles.formItem}>
                         Markdown
-                        <textarea name='markdown' type='text' rows='15' value={this.state.post} onChange={this.handleChange} required />
+                        <textarea name='markdown' type='text' rows='15' value={this.state.markdown} onChange={this.handleChange} required />
                     </label>
                     <label className={styles.formItem}>
                         Tags
