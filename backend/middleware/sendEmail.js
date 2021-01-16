@@ -1,18 +1,20 @@
 const nodemailer = require('nodemailer');
 require('dotenv').config();
-const password = process.env.GMAIL_PASSWORD;
+const password = process.env.EMAIL_PASSWORD;
 
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'mail.gmx.com',
+    port: 587,
+    secureConnection: true,
     auth: {
-      user: 'mica.e.horton@gmail.com',
+      user: 'micahorton@gmx.com',
       pass: password 
     }
   });
 
 const sendMail = (name, email, message) => {
     const mailOptions = {
-        from: 'mica.e.horton@gmail.com',
+        from: 'micahorton@gmx.com',
         to: 'micahorton@protonmail.com',
         subject: 'Message from ' + name + ' at ' + email,
         text: message,
