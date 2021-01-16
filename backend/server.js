@@ -8,17 +8,17 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-var whitelist = ['http://localhost:3000','http://localhost:3001','https://micahorton.com']
+var whitelist = ['http://localhost:3000','http://localhost:3001', 'https://micahorton.com', 'https://admin.micahorton.com']
 var corsOptions = {
   origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
+    if (whitelist.indexOf(origin) !== -1) {
       callback(null, true)
     } else {
       callback(new Error('Not allowed by CORS'))
     }
   }, 
   credentials: true
-}
+} 
 
 app.use(cors(corsOptions));
 app.use(express.json());
