@@ -1,6 +1,5 @@
 import axios from 'axios';
-/* const base = 'https://api-dot-personal-website-279319.wl.r.appspot.com/'; */
-const base = 'http://localhost:5000/'
+const base = 'https://api.micahorton.com/'
 
 export const getAllPosts = () => {
     return axios.get(base)
