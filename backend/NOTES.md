@@ -1,3 +1,0 @@
-- should be /latest for long url
-- but / for custom domain name
-- so problem is internal server error, not cors at this point

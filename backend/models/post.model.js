@@ -44,8 +44,7 @@ const postSchema = new Schema({
     timestamps: true,
 });
 
-postSchema.pre('validate', function(next) {  
-    console.log('HELLo')     
+postSchema.pre('validate', function(next) {    
     if (this.markdown) {
         this.sanatizedHtml = dompurify.sanitize(marked(this.markdown));
     }
