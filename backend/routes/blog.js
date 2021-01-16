@@ -30,7 +30,6 @@ router.route('/update/:id').post(checkAdmin, (req, res, next) => {
     
             post.save()
                 .then(() => {
-                    console.log('POST SAVED',post);
                     res.sendStatus(200);
                 })
                 .catch(err => res.status(400));
@@ -39,7 +38,7 @@ router.route('/update/:id').post(checkAdmin, (req, res, next) => {
 }); 
 
 /* Add Request (Protected) */ 
-router.route('/add').post(checkAdmin, (req, res) => {
+router.route('/add').post(checkAdmin, (req, res, next) => {
     const title = req.body.title;
     const description = req.body.description;
     const markdown = req.body.markdown;
@@ -54,39 +53,12 @@ router.route('/add').post(checkAdmin, (req, res) => {
         .catch((err) => res.status(400))
 }); 
 
-
-/* Route Add Request */ /*
-router.route('/add').post((req, res) => {
-  const title = req.body.title;
-  const post = req.body.post;
-
-  const newProject = new Project({title, post});
-  newProject.save()
-    .then(() => res.json('Project added!'))
-    .catch(err => res.status(400).json('Error: ' + err));
-}); */
-
-
-/* Route Delete by ID Request */ /*
-router.route('/:id').delete((req, res) => {
-Project.findByIdAndDelete(req.params.id)
-    .then(() => res.json('Project deleted.'))
-    .catch(err => res.status(400).json('Error: ' + err));
-}); */
-
-/* Route Update by ID Request */ /*
-router.route('/update/:id').post((req, res) => {
-Project.findById(req.params.id)
-    .then(project => {
-    project.title = req.body.title;
-    project.post = req.body.post;
-
-    project.save()
-        .then(() => res.json('Project updated!'))
-        .catch(err => res.status(400).json('Error: ' + err));
-    })
-    .catch(err => res.status(400).json('Error: ' + err));
-}); */
+/* Delete by ID Request (Protected) */ 
+router.route('/delete/:id').delete(checkAdmin, (req, res, next) => {
+    Post.findByIdAndDelete(req.params.id)
+        .then(() => res.status(200).send('Project deleted.'))
+        .catch(err => res.status(400).send('Error: ' + err));
+}); 
 
 
 module.exports = router;

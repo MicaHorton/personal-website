@@ -34,6 +34,10 @@ const checkAdmin = (req, res, next) => {
     
     } else {
         console.log('Already verified');
+        /*
+        re.status(200);
+        next();
+        */
     }
 
 };
