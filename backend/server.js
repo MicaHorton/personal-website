@@ -8,10 +8,10 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-var whitelist = ['http://localhost:3000', 'https://personal-website-279319.wl.r.appspot.com','https://micahorton.com','https://www.micahorton.com','https://mighty-deer-93.loca.lt']
+var whitelist = ['http://localhost:3000','http://localhost:3001','https://micahorton.com']
 var corsOptions = {
   origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
       callback(null, true)
     } else {
       callback(new Error('Not allowed by CORS'))
@@ -33,8 +33,8 @@ connection.once('open', () => {
 })
 
 // Connect Projects Router
-const projectRouter = require('./routes/project');
-app.use('/projects', projectRouter);
+const postRouter = require('./routes/blog');
+app.use(postRouter);
 
 // Connect Admin Router
 const adminRouter = require('./routes/admin');
@@ -59,3 +59,5 @@ app.post('/email', (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
+
+module.exports = app;

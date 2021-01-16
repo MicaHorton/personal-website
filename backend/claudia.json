@@ -1,0 +1,10 @@
+{
+  "lambda": {
+    "role": "micahorton-executor",
+    "name": "micahorton",
+    "region": "us-west-1"
+  },
+  "api": {
+    "id": "o73sk2olo3"
+  }
+}

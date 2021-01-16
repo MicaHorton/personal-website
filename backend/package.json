@@ -5,18 +5,25 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "init-claudia": "AWS_PROFILE=personal claudia generate-serverless-express-proxy --express-module server",
+    "create-api": "AWS_PROFILE=personal claudia create --name micahorton --handler lambda.handler --deploy-proxy-api --region us-west-1",
+    "update-api": "AWS_PROFILE=personal claudia update"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@google-cloud/debug-agent": "^5.0.0",
+    "aws-serverless-express": "^3.4.0",
     "bcrypt": "^5.0.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
+    "dompurify": "^2.2.6",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "jsdom": "^16.4.0",
     "jsonwebtoken": "^8.5.1",
+    "marked": "^1.2.7",
     "mongoose": "^5.9.10",
     "nodemailer": "^6.4.11"
   }
