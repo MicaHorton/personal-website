@@ -59,7 +59,27 @@ Deal with Multiple Profiles (maybe should put in package.json or can export AWS_
 
 https://stackoverflow.com/questions/50832048/credential-not-load-in-claudiajs-hello-word-example-for-aws
 
-# Add To Resume
+## Add To Resume
 
 - foothill honors institute
 
+## Solved Bugs
+
+### API Notes
+
+\- should be /latest for long url
+
+\- but / for custom domain name
+
+\- so problem is internal server error, not cors at this point
+
+- CORS is working
+  - solved bug #1: bcrypt package
+  - solved bug #2: not logged in
+  - why do problems keep disguising themselves as CORS. I should fix that
+  - 502 internal serval error, not CORS. forbidden came from not using /latest. err message doesn't make sense not sure why.
+
+### Nodemailer
+
+- solved bug #3. request was ending before email could actually be sent. route /email like rest of stuff and use sendEmail as middleware
+- use let for importing middleware not const
