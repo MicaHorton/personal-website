@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const sendMail = require('./middleware/sendEmail');
 require('dotenv').config();
 
 // Initialize Dependnecies and Set Port
@@ -40,20 +39,9 @@ app.use(postRouter);
 const adminRouter = require('./routes/admin');
 app.use(adminRouter);
 
-// Send Mail with Email URL Ending
-app.post('/email', (req, res) => {
-  res.json({message: 'Message recieved'});
-  const {name, email, message} = req.body;
-
-  sendMail(name, email, message, () => {
-    if (err) {
-      console.log('Error sending email', err);
-      return res.status(500).json({ message: err.message || 'Internal Error' });
-    }
-      console.log('Server.js says email sent');
-      return res.json({ message: 'Email sent' });
-  })
-})
+// Connect Email Router
+const emailRouter = require('./routes/email');
+app.use(emailRouter);
 
 // Listen for Connection on Port 
 app.listen(port, () => {
