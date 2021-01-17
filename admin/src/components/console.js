@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { getAllPosts } from '../api';
-import styles from '../styles/console.module.css';
-
 
 const Post = props => (
-    <div className={styles.post}>
-        <Link to={{pathname: props.post._id}}>
+    <article className='post'>
+        <Link to={{pathname: 'edit/' + props.post._id}}>
             {props.post.title}
         </Link>
-    </div>
+    </article>
 )
 
 export default class Console extends Component {
@@ -35,9 +33,9 @@ export default class Console extends Component {
         if (this.state.posts) {
             return (
                 <main>
-                    <div className={styles.header}><h1>Mica's Admin Console</h1></div>
+                    <h1 className='console-header'>Mica's Admin Console</h1>
                     {this.listPosts()}
-                    <Link to='/add' className='add-button'>Add New Post</Link>
+                    <Link to={{pathname: '/add'}} className='button add-button'>Add New Post</Link>
                 </main>
             )
         }

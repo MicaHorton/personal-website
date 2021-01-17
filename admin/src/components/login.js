@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styles from '../styles/login.module.css';
 import { login } from '../api.js';
 
 export default class Login extends Component {
@@ -39,21 +38,19 @@ export default class Login extends Component {
 
     render() {
         return (
-            <main>
-                <div className={styles.box}>
-                    <h1>Login</h1>
-                    <form onSubmit={this.handleSubmit}>
-                        <label className={styles.formItem}>
-                            Email
-                            <input name='email' type='email' value={this.state.email} onChange={this.handleChange} required />                
-                        </label>
-                        <label className={styles.formItem}>
-                            Password
-                            <input name='password' type='password' value={this.state.password} onChange={this.handleChange} required />                
-                        </label>
-                        <input className={`${styles.formItem} ${styles.button}`} type='submit' value='Submit' />
-                    </form>
-                </div>
+            <main>  
+                <h1 className='login-header'>Login</h1>
+                <form className='login-form' onSubmit={this.handleSubmit}>
+                    <label className='login-item'>
+                        Email
+                        <input name='email' type='email' value={this.state.email} onChange={this.handleChange} required />                
+                    </label>
+                    <label className='login-item'>
+                        Password
+                        <input name='password' type='password' value={this.state.password} onChange={this.handleChange} required />                
+                    </label>
+                    <input className='button login-button' type='submit' value='Submit' />
+                </form>
             </main>
         );
     }

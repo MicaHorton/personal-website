@@ -1,144 +1,237 @@
-body {
-    background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/debut_light.png");
-    text-align: center;
+@import url('https://fonts.googleapis.com/css?family=DM+Sans:500,700&display=swap');
 
-    font-family: 'DM Sans', sans-serif;
-    font-size: 20px;
-    color: #83818c;
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
     outline: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Role Reset (For Older Browsers) */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* General Settings */
+body {
+    background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/debut_light.png');
+    font-family: 'DM Sans', sans-serif;
+    font-size: 25px;
+    color: black;
+    font-weight: 500;
 } 
 
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: left;
 }
 
-section {
-    width: 70vw;
-    min-height: 30vh;
-    margin-top: 30px;
-
-    background-color: #fff;
-    border-radius: 40px;
-    box-shadow: 0 10px 40px rgba(159, 162, 177, .8);
-    padding-bottom: 30px;
-    
-    font-weight: 500;
-    padding-left: 50px;
-    padding-right: 50px;
-}
-
-
-h1 {
-    color: black;
-    font-size: 30px;
-    padding-top: 20px;
-    font-weight: 700;
-}
-
-h2 {
-    color: black;
-    font-size: 25px;
-    font-style: italic;
-    text-decoration: underline;
-}
-
-/* Icons and Links Styling */
-.icons li {
+h1, article, form, label, a {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    vertical-align: center;
+}
+
+h1, a {
     align-items: center;
 }
 
-.icons li i {
-    font-size: 40px;
-    margin-bottom: 10px;
+form {
+    flex-direction: column;
 }
 
-.icons li a {
+h1, article, label {
+    background-color: #fff;
+    box-shadow: 0 10px 40px rgba(159, 162, 177, .8);
+}
+
+.button {
+    width: 180px;
+    height: 50px;
+    border-radius: 10px;
+    
     font-size: 20px;
-    margin-left: 10px;
-}
+    font-weight: 700;
 
-a, button {
-    color: inherit; 
-    text-decoration: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-}
-
-button {
-    background: none;
+    background-color: #fff;
+    box-shadow: 0 10px 40px rgba(159, 162, 177, .8);
     border: none;
-    font-family: inherit;
-    font-style: inherit;
-    padding: inherit;
 }
 
-
-.italicLink {
-    font-style: italic;
+/* Console Page Styling */
+h1, article {
+    width: 80vw;
+    min-height: 4vw;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border-radius: 20px;
 }
 
-.blueLink {
-    color: blue;
+.console-header {
+    width: 25vw;  
+}
+
+.post>* {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.add-button {
+    width: 180px;
 }
 
 /* Form Styling */
-label {
-    display: flex;
-    flex-flow: column;
+.form-header, label {
+    border-radius: 40px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.form-header {
+    width: 25vw;
     margin-bottom: 15px;
+    
+}
+
+label {
+    width: 70vw;
+    min-height: 100px;
+    flex-direction: column;
+
+    padding: 20px 40px 40px 50px;
+    border-radius: 40px;
+    margin: 20px;
 }
 
 input, textarea {
     font-size: 17px;
-    font-family: inherit;
-    font-weight: 500;
     padding: 5px;
-
     border: 1px solid #83818c; 
     border-radius: 3px;
-    margin-top: 5px;
 }
 
 textarea {
-    resize: none;
+    font-family: 'DM Sans', sans-serif;
+    margin: 10px;
+}
+
+.submit-button {
+    width: 100px;
+    border: none;
+    
+    margin-left: auto;
+    margin-right: 50px;
+    margin-top: 20px;  
 }
 
 
-/* Add Page Styling */
+/* Login Page Styling */
+.login-header, .login-item {
+    width: 30vw;
+}
 
-.add-button {
-    width: 180px;
-    height: 50px;
+.login-header {
+    font-size: 30px;
+    margin-top: 50px;
+    font-weight: 700;
 
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding-left: 40px;
+    padding-right: 50px;
+    border-radius: 20px;
 
 
-    border: none;
-    border-radius: 10px;
+}
+
+.login-button {
+    align-self: center;
+}
+
+
+/*
+Box Like Header
+also see styles/login.module.css
+
+.login-form {
+    width: 35vw;
+    min-height: 35vw;
+    border-radius: 40px;
     background-color: #fff;
     box-shadow: 0 10px 40px rgba(159, 162, 177, .8);
+    padding-bottom: 30px;
+    margin-top: 50px;
+}
 
-    color: black;
-    font-size: 20px;
+.login-header, .login-item, .login-item > input, .login-button {
+    box-shadow: none;
+    width: inherit;
+}
+
+.login-item > input {
+    color: red;
+}
+.login-header {
+    font-size: 30px;
     font-weight: 700;
+
 }
 
-/* Media Queries */
-@media (min-width: 1224px) {
-    section {
-            width: 65vw;
-    }
 
-    section li {
-            margin-left: 1em; 
-    }
-}
+.login-item {
+    padding: none;
+    margin: none;
+    
+} 
 
+.login-button {
+
+
+}*/

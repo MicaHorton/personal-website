@@ -1,6 +1,5 @@
 import axios from 'axios';
-/* const base = 'https://api.micahorton.com/'; */
-const base = 'http://localhost:5000/'; 
+const base = 'https://api.micahorton.com/'; 
 
 export const getAllPosts = () => {
     return axios.get(base)
@@ -41,7 +40,6 @@ export const addPost = post => {
         return err
     })
 }
-
 
 export const login = credentials => {
     return axios.post(base + 'login', credentials, {withCredentials: true, credentials: 'include'})
