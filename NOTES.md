@@ -59,6 +59,14 @@ Deal with Multiple Profiles (maybe should put in package.json or can export AWS_
 
 https://stackoverflow.com/questions/50832048/credential-not-load-in-claudiajs-hello-word-example-for-aws
 
+Backend Example with Dompurify and Marked
+
+https://github.com/WebDevSimplified/Markdown-Blog
+
+Multiple AWS
+
+https://stackoverflow.com/questions/50832048/credential-not-load-in-claudiajs-hello-word-example-for-aws
+
 ## Add To Resume
 
 - foothill honors institute
