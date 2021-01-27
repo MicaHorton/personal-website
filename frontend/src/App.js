@@ -10,7 +10,7 @@ import Contact from './components/contact.js';
 
 function App() {
   return (
-  <Router>
+  <Router onEnter={console.log('hello')}>
     <Navbar exact path='/' />
     <Route exact path='/' component={About} />
     <Route exact path='/projects' component={Projects} />

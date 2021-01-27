@@ -30,7 +30,6 @@ export default class Blog extends Component {
 
     listAll() {
         return this.state.projects.map(current => {
-            console.log('List all was run')
             return <Post project={current} key={current._id}/>;
         })
     }
@@ -51,7 +50,6 @@ export default class Blog extends Component {
     } 
 
     render() {
-        console.log('Render was run');
         const wantWhat = this.state.wantWhat;
         let content;
 
