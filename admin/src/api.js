@@ -1,5 +1,6 @@
 import axios from 'axios';
-const base = 'https://api.micahorton.com/'; 
+// const base = 'http://api.micahorton.com/'; 
+const base = 'http://localhost:5000'; 
 
 export const getAllPosts = () => {
     return axios.get(base)
