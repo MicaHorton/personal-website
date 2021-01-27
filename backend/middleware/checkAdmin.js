@@ -4,23 +4,20 @@ const secret = process.env.TOKEN_SECRET;
 
 const checkAdmin = (req, res, next) => {
     const token = req.cookies.jwt;
-    console.log(token);
+    console.log('token?', token);
 
     if (token) {
         jwt.verify(token, process.env.TOKEN_SECRET, (err, decoded) => {
             if (err) {
-                console.log('ID ERROR: Could not connect to the protected route');
-                res.status(403);
-                res.redirect('/login');
+                res.status(500).send('ERROR: Token received, but unable to connect to protected route.');
             } else {
-                console.log('SUCCESS: Connected to protected route');
-                res.status(200);
+                res.status(200).send('SUCCESS: Connected to protected route');
                 next();
             }
         });
     
     } else {
-        console.log('Already verified');
+        res.status(403).send('Not logged in');
         /*
         re.status(200);
         next();

@@ -1,10 +1,11 @@
 import axios from 'axios';
 // const base = 'http://api.micahorton.com/'; 
-const base = 'http://localhost:5000'; 
+const base = 'http://localhost:5000/'; 
 
 export const getAllPosts = () => {
     return axios.get(base)
     .then(res => {
+        console.log('get all posts', res.data);
         return res.data
     })
     .catch(err => {

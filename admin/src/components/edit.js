@@ -14,6 +14,7 @@ export default class Edit extends Component {
     }
 
     componentDidMount() {
+        console.log('should get single now')
         getSinglePost(this.state.id)
         .then(initial => this.setState({
             title: initial.title,
@@ -21,8 +22,6 @@ export default class Edit extends Component {
             markdown: initial.markdown
         }))
         .catch(err => console.log(err))
-
-
     }
 
     handleChange = (e) => {   
