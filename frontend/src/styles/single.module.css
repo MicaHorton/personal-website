@@ -21,6 +21,20 @@
     font-weight: 700;
 }
 
+.box>h2 {
+    color: black;
+    font-size: 25px;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.box>h3 {
+    color: black;
+    font-size: 22px;
+    font-weight: 700;
+    font-style: normal;
+}
+
 .box>* {
     color: #83818c;
     font-family: 'DM Sans', sans-serif;

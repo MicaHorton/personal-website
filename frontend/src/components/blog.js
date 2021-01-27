@@ -62,7 +62,7 @@ export default class Blog extends Component {
 
         return (
             
-            <main>
+            <main className={styles.blog}>
                 <div className={styles.tagbar}>
                     <span className={styles.filter}>Filter</span>
                     <button onClick={this.handleTagClick} className={styles.tag}>All</button>
