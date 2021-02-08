@@ -23,7 +23,7 @@
     "express": "^4.17.1",
     "jsdom": "^16.4.0",
     "jsonwebtoken": "^8.5.1",
-    "marked": "^1.2.7",
+    "marked": "^2.0.0",
     "mongoose": "^5.11.12",
     "nodemailer": "^6.4.17"
   }
