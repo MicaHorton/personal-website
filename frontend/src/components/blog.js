@@ -59,6 +59,8 @@ export default class Blog extends Component {
             content = this.listByTag()
         }
 
+        console.log('blog rendered')
+
 
         return (
             
