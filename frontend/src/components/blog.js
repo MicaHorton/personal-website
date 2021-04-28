@@ -7,7 +7,7 @@ const Post = props => (
     <article>
         <h1>{props.project.title}</h1>
         <p>{props.project.description}</p>
-        <Link to={{pathname: '/single/' + props.project._id}}
+        <Link to={{pathname: '/blog/' + props.project._id}}
          className={styles.readMore}>read more</Link>
     </article>
 )
