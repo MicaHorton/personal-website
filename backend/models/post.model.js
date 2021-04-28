@@ -16,7 +16,6 @@ const postSchema = new Schema({
     description: {
         type: String,
         required: true,
-        unique: true,
         trim: true,
         minlength: 5
     },
@@ -26,7 +25,6 @@ const postSchema = new Schema({
         unique: true,
         trim: true,
         minlength: 5
-
     },
     sanatizedHtml: {
         type: String,
@@ -53,3 +51,4 @@ postSchema.pre('validate', function(next) {
 
 const Post = mongoose.model('Post', postSchema);
 module.exports = Post;
+

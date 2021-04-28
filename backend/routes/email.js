@@ -3,7 +3,7 @@ const router = require('express').Router();
 let sendMail = require('../middleware/sendEmail');
 
 // Send Mail with Email URL Ending
-router.route('/email').post(sendMail, (req, res, next) => {
+router.route('/').post(sendMail, (req, res, next) => {
     res.status(200).send('Message sent');
 })
 

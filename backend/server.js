@@ -19,8 +19,8 @@ var corsOptions = {
   credentials: true
 } 
 
-//app.use(cors());
-app.use(cors(corsOptions));
+app.use(cors());
+// app.use(cors(corsOptions));
 app.use(express.json());
 
 // Connect To Mongoose
@@ -32,17 +32,19 @@ connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
 
+app.get('/', (req, res) => res.send('Hello World!'));
+
 // Connect Projects Router
 const postRouter = require('./routes/blog');
-app.use(postRouter);
+app.use('/blog', postRouter);
 
 // Connect Admin Router
 const adminRouter = require('./routes/admin');
-app.use(adminRouter);
+app.use('/admin', adminRouter);
 
 // Connect Email Router
 const emailRouter = require('./routes/email');
-app.use(emailRouter);
+app.use('/email', emailRouter);
 
 // Listen for Connection on Port 
 app.listen(port, () => {
