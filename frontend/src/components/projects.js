@@ -9,40 +9,40 @@ const Projects = () => (
         <ul>
             <li>
                 <a className='blueLink' href='https://www.micahorton.com' 
-                target='_blank' rel='noreferrer'>micahorton.com</a> 
+                target='_blank' rel='noreferrer'>micahorton.com </a> 
                 (<a className='italicLink' href='https://github.com/MicaHorton/micahorton.com' 
                 target='_blank' rel='noreferrer'>see repository</a>)
             </li>
 
             <li>
                 <a className='blueLink' href='https://www.hyfix.ai' 
-                target='_blank' rel='noreferrer'>hyfix.ai</a> 
+                target='_blank' rel='noreferrer'>hyfix.ai </a> 
                 (<a className='italicLink' href='https://github.com/MicaHorton/hyfix.ai' 
                 target='_blank' rel='noreferrer'>see repository</a>)
             </li>
 
             <li>
                 <a className='blueLink' href='https://www.fusionpedia.org' 
-                target='_blank' rel='noreferrer'>fusionpedia.org</a> 
+                target='_blank' rel='noreferrer'>fusionpedia.org </a> 
                 (<a className='italicLink' href='https://github.com/MicaHorton/wendell-horton' 
                 target='_blank' rel='noreferrer'>see repository</a>)
             </li>
 
             <li>
                 <a className='blueLink' href='https://clubhub.info/myPage.html' 
-                target='_blank' rel='noreferrer'>clubhub.info</a> 
+                target='_blank' rel='noreferrer'>clubhub.info </a> 
                 (<a className='italicLink' href='https://github.com/MicaHorton/clubhub.info' 
                 target='_blank' rel='noreferrer'>see repository</a>)
             </li>
 
             <li>
-                <button>HQRecyle website</button> 
+                HQRecyle website
                 (<a className='italicLink' href='https://github.com/MicaHorton/wendell-horton' 
                 target='_blank' rel='noreferrer'>see repository</a>)
             </li>
 
             <li>
-                <button>EqOpTech volunteer app</button> 
+                EqOpTech volunteer app
                 (<a className='italicLink' href='https://github.com/MicaHorton/wendell-horton' 
                 target='_blank' rel='noreferrer'>see repository</a>)
             </li>
