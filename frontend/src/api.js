@@ -5,7 +5,6 @@ const base = 'https://api.micahorton.com/';
 export const getAllPosts = () => {
     return axios.get(base + 'blog/')
     .then(res => {
-        console.log('posts fetched')
         return res.data
     })
     .catch(err => {

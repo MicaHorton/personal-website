@@ -68,6 +68,6 @@ code {
 
 @media (min-width: 1224px) {
     .box {
-        width: 70px;
+        width: 70vw;
     }
 }

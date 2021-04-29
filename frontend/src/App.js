@@ -19,7 +19,6 @@ export default class App extends Component {
         getAllPosts()
         .then(posts => {
             this.setState({ posts: posts });
-            console.log('Posts fetched')
         })
         .catch(err => console.log(err))
     }
