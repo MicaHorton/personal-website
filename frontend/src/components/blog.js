@@ -11,9 +11,6 @@ const Post = props => (
 );
 
 const Blog = props => {
-
-    console.log(props);
-    
     let content = props.posts.map(current => {
         return <Post project={current} key={current._id}/>;
     })
