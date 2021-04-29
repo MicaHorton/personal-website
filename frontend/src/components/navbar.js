@@ -71,10 +71,8 @@ class Navbar extends Component {
 }
 
 export default withRouter(Navbar);
+
 /*
-
-
-
 open Github in new tab or nah?
 target="_blank" 
 

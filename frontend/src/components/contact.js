@@ -55,37 +55,34 @@ export default class Contact extends Component {
         let required = this.state.required;
 
         return (
-                <main>
-                <section>
-                        <h1>Contact Me</h1>
-                        <form onSubmit={this.handleSubmit}>
-                        <label>
-                                Name
-                                <input name='name' type='text' value={this.state.name} 
-                                onChange={this.handleChange} required={required} />                
-                        </label>
+            <main>
+            <section>
+                    <h1>Contact Me</h1>
+                    <form onSubmit={this.handleSubmit}>
+                    <label>
+                            Name
+                            <input name='name' type='text' value={this.state.name} 
+                            onChange={this.handleChange} required={required} />                
+                    </label>
 
-                        <label>
-                                Email
-                                <input name='email' type='email' value={this.state.email} 
-                                onChange={this.handleChange} required={required} />                
-                        </label>
+                    <label>
+                            Email
+                            <input name='email' type='email' value={this.state.email} 
+                            onChange={this.handleChange} required={required} />                
+                    </label>
 
-                        <label>
-                                Message
-                                <textarea name='message' rows='10' value={this.state.message} 
-                                onChange={this.handleChange} required={required} />                
-                        </label>
+                    <label>
+                            Message
+                            <textarea name='message' rows='10' value={this.state.message} 
+                            onChange={this.handleChange} required={required} />                
+                    </label>
 
-                        <input type='submit' value='Submit' />
+                    <input type='submit' value='Submit' />
 
-                        {alert}
-                        </form>
-                </section>
-                </main>
-
-                
-
+                    {alert}
+                    </form>
+            </section>
+            </main>
         );
     }
 }

@@ -1,6 +1,17 @@
-import React, { Component } from 'react';
 import styles from '../styles/single.module.css';
 
+const Single = props => {
+    return (
+        <main>
+            <div className={styles.box} 
+            dangerouslySetInnerHTML={{ __html: props.post.sanatizedHtml }} />         
+        </main>
+    );
+}
+
+export default Single;
+
+/*
 export default class Single extends Component {
     render() {
         return (
@@ -10,4 +21,4 @@ export default class Single extends Component {
             </main>
         );
     }
-}
+}*/
