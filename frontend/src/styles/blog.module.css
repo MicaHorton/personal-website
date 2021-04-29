@@ -51,91 +51,11 @@ article > h2 {
         margin-top: 10px;
     }
 
-    
-
-}
-
-.tagbar {
-    display: none;
 }
 
 
 
-/* TAGBAR STYLING
 
-margin: 20px;
-
-.tagbar {
-    width: 70vw;
-    margin-top: 30px;
-    margin-bottom: 10px;     
-    height: 30px;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-
-    font-family: 'DM Sans', sans-serif;
-
-}
-    
-.tag {
-    width: 120px;
-    height: 35px;
-
-    margin: 15px;
-    text-align: center;
-
-    border: none;
-    background-color: #fff;
-    box-shadow: 0 10px 40px rgba(159, 162, 177, .8); 
-
-
-    font-size: 15px;
-    font-weight: 500;
-
-}
-
-.tag:first-of-type {
-    margin-left: 35px;
-}
-
-ON MOBILE
-.filter {
-
-    margin-left: auto;
-    margin-right: auto;
-
-
-    border-width: 30px;
-    border-color: black;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    vertical-align: center;
-        
-}
-
-.tag:before {
-    content: "";
-    position: absolute;
-    right: 100%;
-    top: 0;
-
-    width: 0;
-    height: 0;
-
-    border-top: 15px solid transparent;
-    border-right: 20px solid rgba(111, 168, 116, 0.8);
-    border-bottom: 15px solid transparent;
-}
-
-ON WEB
-.filter { 
-    display: none;
-
-*/
 
 
 
