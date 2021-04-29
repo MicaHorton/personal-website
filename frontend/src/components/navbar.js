@@ -25,6 +25,8 @@ class Navbar extends Component {
             case '/contact':
                 colorActive[3] = true;
                 break;
+            default:
+                break;
         }
         return colorActive;
 

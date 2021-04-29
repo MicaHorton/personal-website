@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { getAllPosts } from '../api.js';
 import styles from '../styles/blog.module.css';
 
 const Post = props => (
@@ -14,62 +13,13 @@ const Post = props => (
 
 
 export default class Blog extends Component {
-    constructor (props) {
-        super(props);
-        this.state = {projects:[], wantWhat: 'all'};
-    }
-
-    componentDidMount() {
-        getAllPosts()
-        .then(projects => {
-            this.setState({ projects: projects });
-            console.log('set projects')
-        })
-        .catch(err => console.log(err))
-    }
-
-    listAll() {
-        return this.state.projects.map(current => {
+    render(){
+        let content = this.props.posts.map(current => {
             return <Post project={current} key={current._id}/>;
         })
-    }
-
-    listByTag() {
-        const tag = this.state.wantWhat;
-        return this.state.projects.map(currentProject => {
-            return currentProject.tags.map(currentTag => {
-                if (currentTag === tag) {
-                    return <Post project={currentProject} key={currentProject._id}/>;
-                }
-            })
-        })  
-    }
-
-    handleTagClick = (e) => {
-        this.setState({wantWhat: e.target.innerHTML.toLowerCase()});
-    } 
-
-    render() {
-        const wantWhat = this.state.wantWhat;
-        let content;
-
-        if (wantWhat === 'all') {
-            content = this.listAll()
-        } else {
-            content = this.listByTag()
-        }
-
-        console.log('blog rendered')
-
 
         return (
-            
             <main className={styles.blog}>
-                <div className={styles.tagbar}>
-                    <span className={styles.filter}>Filter</span>
-                    <button onClick={this.handleTagClick} className={styles.tag}>All</button>
-                    <button onClick={this.handleTagClick} className={styles.tag}>Python</button>
-                </div>
                 <div className={styles.content}>{content}</div>
             </main>
         )
@@ -78,3 +28,53 @@ export default class Blog extends Component {
   }
 
 
+/*
+<div className={styles.tagbar}>
+    <span className={styles.filter}>Filter</span>
+    <button onClick={this.handleTagClick} className={styles.tag}>All</button>
+    <button onClick={this.handleTagClick} className={styles.tag}>Python</button>
+</div>
+
+console.log('props', this.props.posts);
+const wantWhat = this.state.wantWhat;
+let content;
+
+if (wantWhat === 'all') {
+    content = this.listAll()
+} else {
+    content = this.listByTag()
+}
+
+console.log('blog rendered')
+
+componentDidMount() {
+    getAllPosts()
+    .then(projects => {
+        this.setState({ projects: projects });
+        console.log('set projects')
+    })
+    .catch(err => console.log(err))
+}
+
+listAll() {
+    return this.state.projects.map(current => {
+        return <Post project={current} key={current._id}/>;
+    })
+}
+
+listByTag() {
+    const tag = this.state.wantWhat;
+    return this.state.projects.map(currentProject => {
+        return currentProject.tags.map(currentTag => {
+            if (currentTag === tag) {
+                return <Post project={currentProject} key={currentProject._id}/>;
+            }
+        })
+    })  
+}
+
+handleTagClick = (e) => {
+    this.setState({wantWhat: e.target.innerHTML.toLowerCase()});
+} 
+
+*/
