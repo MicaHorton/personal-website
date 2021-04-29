@@ -12,7 +12,7 @@ import { getAllPosts } from './api.js';
 
 const App = () => {
     const [posts, setPosts] = useState([]);
-
+    
     useEffect(() => {
         getAllPosts()
         .then(posts => {
@@ -22,8 +22,6 @@ const App = () => {
 
     }, []);
 
-    console.log('POSTS', posts);
-
     return (
         <BrowserRouter>
             <Navbar exact path='/' />
@@ -32,7 +30,11 @@ const App = () => {
             <Route exact path='/blog'>
                 <Blog posts={posts}/>
             </Route>
-            <Route exact path='/blog/:id' component={Single}/>
+            <Route exact path='/blog/:id' render={(props) => {
+                let id = props.match.params.id;
+                let post = posts.filter(x => x._id === id)[0];
+                return <Single post={post}/>;
+            }}/>
             <Route exact path='/contact' component={Contact} />
         </BrowserRouter>
     );
@@ -42,9 +44,7 @@ export default App;
 
 
 /*
-<Route exact path='/blog/:id' render={(props) => {
-    let id = props.match.params.id;
-    let post = posts.filter(x => x._id === id)[0];
-    return <Single post={post}/>;
-}}/>
+<Route exact path='/blog/:id' component={Single}/>
+
+
 */
