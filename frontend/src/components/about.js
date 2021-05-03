@@ -21,7 +21,7 @@ const About = () => (
                 </li>
                 <li>
                     <i className="fa fa-linkedin-square"></i>
-                    <a href="https://github.com/MicaHorton" 
+                    <a href="https://www.linkedin.com/in/micahorton/" 
                     target="_blank" rel="noreferrer">LinkedIn</a>
                 </li>
             </ul>
